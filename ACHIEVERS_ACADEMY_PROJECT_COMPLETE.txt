@@ -238,3 +238,6 @@ OFFICIAL NEET MEDICAL MERIT POSTER INTEGRATION
 - Top MBBS Selections: Sakshi Shivle 643, Aadinath Pachorkar 631, Soham Gavali 605, Kanupriya Mate 604, etc.
 - Integrated in Homepage (/): 3rd Topper Card (Top MBBS Selections)
 - Integrated in Results Page (/results): Featured in Top 3 Major Merit Posters Grid with Click-to-Zoom Fullscreen Lightbox
+
+
+HSC Poster Card (static_result_HSC.jpeg) removed from Homepage as requested. Now displaying 3 topper cards (JEE, NEET, MHT-CET) in a 3-column grid.

@@ -841,27 +841,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 4 Topper Result Cards with Full Face Framing */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 3 Topper Result Cards with Full Face Framing */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* Card 1: HSC Board */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-5 text-center shadow-sm hover:shadow-md transition">
-              <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
-                <img
-                  src="/images/static_result_HSC.jpeg"
-                  alt="HSC Results - Achievers Academy"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
-                HSC Board Toppers
-              </span>
-              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif">100% Pass Result</h4>
-              <p className="text-xs text-slate-500 mt-1">Science Stream (PCM &amp; PCB)</p>
-            </div>
-
-            {/* Card 2: JEE Main */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-5 text-center shadow-sm hover:shadow-md transition">
+            {/* Card 1: JEE Main */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student1.jpg"
@@ -876,8 +860,8 @@ export default function HomePage() {
               <p className="text-xs text-slate-500 mt-1">Qualified for Premier IITs &amp; NITs</p>
             </div>
 
-            {/* Card 3: NEET */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-5 text-center shadow-sm hover:shadow-md transition">
+            {/* Card 2: NEET */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student5.jpg"
@@ -892,8 +876,8 @@ export default function HomePage() {
               <p className="text-xs text-slate-500 mt-1">Government Medical College Seats</p>
             </div>
 
-            {/* Card 4: MHT-CET */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-5 text-center shadow-sm hover:shadow-md transition">
+            {/* Card 3: MHT-CET */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student7.jpg"

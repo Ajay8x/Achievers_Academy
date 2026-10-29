@@ -241,3 +241,5 @@ OFFICIAL NEET MEDICAL MERIT POSTER INTEGRATION
 
 
 HSC Poster Card (static_result_HSC.jpeg) removed from Homepage as requested. Now displaying 3 topper cards (JEE, NEET, MHT-CET) in a 3-column grid.
+
+Updated Results dropdown in Navbar with exact screenshot items: EXAMINATION RESULTS (CET Results, NEET Results, JEE Results, 11th-12th Results).

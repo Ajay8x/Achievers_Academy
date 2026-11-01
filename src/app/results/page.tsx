@@ -31,13 +31,13 @@ export default function ResultsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Featured 100% Success Banner */}
-          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white border border-gold-500/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl">
+          <div id="board" className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white border border-gold-500/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl scroll-mt-24">
             <div className="lg:col-span-8 space-y-4">
               <span className="text-xs uppercase tracking-widest text-gold-400 font-bold">
                 From Vision to Victory
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white">
-                100% Passing Success in Maharashtra HSC Board
+                100% Passing Success in Maharashtra HSC Board (11th &amp; 12th)
               </h2>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                 Year after year, Achievers Academy delivers outstanding academic performances in Class 12 Science. Our students regularly achieve district honours and secure admissions into prestigious universities.
@@ -71,26 +71,26 @@ export default function ResultsPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* JEE */}
-              <div className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm">
+              {/* CET */}
+              <div id="cet" className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm scroll-mt-24">
                 <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
-                    src="/images/static_result_student1.jpg"
-                    alt="JEE Achievers"
+                    src="/images/static_result_student7.jpg"
+                    alt="MHT CET Achievers"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-navy-100 text-navy-900 px-3 py-1 rounded-full">
-                  JEE Main &amp; Advanced
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
+                  MHT-CET Champions
                 </span>
-                <h4 className="text-xl font-bold font-serif text-navy-950 mt-3">99+ Percentile Club</h4>
+                <h4 className="text-xl font-bold font-serif text-navy-950 mt-3">98.5+ Percentile</h4>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
-                  Multiple students qualified for top Indian Institutes of Technology (IITs), National Institutes of Technology (NITs), and IIITs.
+                  State rankers securing coveted Computer Engineering, AI, and Pharmacy branches at premier engineering institutes.
                 </p>
               </div>
 
               {/* NEET */}
-              <div className="p-6 rounded-3xl bg-white border-2 border-gold-400/50 text-center group hover:shadow-lg transition shadow-sm">
+              <div id="neet" className="p-6 rounded-3xl bg-white border-2 border-gold-400/50 text-center group hover:shadow-lg transition shadow-sm scroll-mt-24">
                 <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
                     src="/images/static_result_student5.jpg"
@@ -107,21 +107,21 @@ export default function ResultsPage() {
                 </p>
               </div>
 
-              {/* MHT-CET */}
-              <div className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm">
+              {/* JEE */}
+              <div id="jee" className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm scroll-mt-24">
                 <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
-                    src="/images/static_result_student7.jpg"
-                    alt="MHT CET Achievers"
+                    src="/images/static_result_student1.jpg"
+                    alt="JEE Achievers"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
-                  MHT-CET Champions
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-navy-100 text-navy-900 px-3 py-1 rounded-full">
+                  JEE Main &amp; Advanced
                 </span>
-                <h4 className="text-xl font-bold font-serif text-navy-950 mt-3">98.5+ Percentile</h4>
+                <h4 className="text-xl font-bold font-serif text-navy-950 mt-3">99+ Percentile Club</h4>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
-                  State rankers securing coveted Computer Engineering, AI, and Pharmacy branches at premier engineering institutes.
+                  Multiple students qualified for top Indian Institutes of Technology (IITs), National Institutes of Technology (NITs), and IIITs.
                 </p>
               </div>
             </div>

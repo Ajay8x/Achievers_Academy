@@ -164,79 +164,87 @@ export default function Navbar() {
 
               {/* 3. Results (Dropdown) */}
               <div 
-                className="relative py-2"
+                className="group relative py-2"
                 onMouseEnter={() => setResultsOpen(true)}
                 onMouseLeave={() => setResultsOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 py-1 transition ${
-                    pathname.startsWith('/results') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  onClick={() => setResultsOpen(!resultsOpen)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition ${
+                    resultsOpen || pathname.startsWith('/results')
+                      ? 'bg-blue-50 text-blue-600 font-bold'
+                      : 'text-slate-700 hover:text-navy-950 group-hover:text-blue-600'
                   }`}
                 >
                   <span>Results</span>
-                  <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${resultsOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform group-hover:rotate-180 ${resultsOpen ? 'rotate-180' : ''}`} />
                 </button>
 
-                {resultsOpen && (
-                  <div className="absolute top-full left-0 w-64 pt-2 z-50">
-                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2.5 animate-fade-in ring-1 ring-black/5">
+                <div className={`absolute top-full left-0 w-56 pt-2 z-50 transition-all ${resultsOpen ? 'block' : 'hidden group-hover:block'}`}>
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5 animate-fade-in ring-1 ring-black/5">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">
+                      EXAMINATION RESULTS
+                    </span>
+                    <div className="space-y-1">
                       <Link
-                        href="/results"
+                        href="/results#cet"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition"
+                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
                       >
-                        <Trophy className="w-4 h-4 text-amber-500" />
-                        <div>
-                          <span className="font-bold text-xs text-navy-950 block">All Board &amp; Entrance Results</span>
-                          <span className="text-[10px] text-slate-400">100% Pass Milestones</span>
-                        </div>
+                        <span className="text-sm">🎯</span>
+                        <span>CET Results</span>
                       </Link>
 
                       <Link
-                        href="/results"
+                        href="/results#neet"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition"
+                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
                       >
-                        <GraduationCap className="w-4 h-4 text-blue-600" />
-                        <div>
-                          <span className="font-bold text-xs text-navy-950 block">JEE Main &amp; Advanced</span>
-                          <span className="text-[10px] text-slate-400">99+ Percentile Club</span>
-                        </div>
+                        <span className="text-sm">🎯</span>
+                        <span>NEET Results</span>
                       </Link>
 
                       <Link
-                        href="/results"
+                        href="/results#jee"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition"
+                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
                       >
-                        <Stethoscope className="w-4 h-4 text-emerald-600" />
-                        <div>
-                          <span className="font-bold text-xs text-navy-950 block">NEET Medical UG</span>
-                          <span className="text-[10px] text-slate-400">Top MBBS Selections</span>
-                        </div>
+                        <span className="text-sm">🎯</span>
+                        <span>JEE Results</span>
+                      </Link>
+
+                      <Link
+                        href="/results#board"
+                        onClick={() => setResultsOpen(false)}
+                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                      >
+                        <span className="text-sm">📋</span>
+                        <span>11th–12th Results</span>
                       </Link>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               {/* 4. Courses (Categorized Dropdown: Class 11th & Class 12th) */}
               <div 
-                className="relative py-2"
+                className="group relative py-2"
                 onMouseEnter={() => setCoursesOpen(true)}
                 onMouseLeave={() => setCoursesOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 py-1 transition ${
-                    pathname.startsWith('/programs') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  onClick={() => setCoursesOpen(!coursesOpen)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition ${
+                    coursesOpen || pathname.startsWith('/programs')
+                      ? 'bg-blue-50 text-blue-600 font-bold'
+                      : 'text-slate-700 hover:text-navy-950 group-hover:text-blue-600'
                   }`}
                 >
                   <span>Courses</span>
-                  <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${coursesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform group-hover:rotate-180 ${coursesOpen ? 'rotate-180' : ''}`} />
                 </button>
 
-                {coursesOpen && (
-                  <div className="absolute top-full left-0 w-60 pt-2 z-50">
+                <div className={`absolute top-full left-0 w-60 pt-2 z-50 transition-all ${coursesOpen ? 'block' : 'hidden group-hover:block'}`}>
                     <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5 animate-fade-in ring-1 ring-black/5 space-y-3">
                       
                       {/* CLASS 11TH */}
@@ -307,7 +315,7 @@ export default function Navbar() {
 
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               {/* 5. Gallery */}
@@ -384,13 +392,45 @@ export default function Navbar() {
             >
               About
             </Link>
-            <Link
-              href="/results"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-xl font-bold text-navy-950 hover:bg-slate-50"
-            >
-              Results
-            </Link>
+            <div className="space-y-1">
+              <Link
+                href="/results"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 rounded-xl font-bold text-navy-950 hover:bg-slate-50"
+              >
+                Results
+              </Link>
+              <div className="pl-4 space-y-1">
+                <Link
+                  href="/results#cet"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                >
+                  🎯 CET Results
+                </Link>
+                <Link
+                  href="/results#neet"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                >
+                  🎯 NEET Results
+                </Link>
+                <Link
+                  href="/results#jee"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                >
+                  🎯 JEE Results
+                </Link>
+                <Link
+                  href="/results#board"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                >
+                  📋 11th–12th Results
+                </Link>
+              </div>
+            </div>
             <Link
               href="/programs/competitive-exams"
               onClick={() => setMobileMenuOpen(false)}

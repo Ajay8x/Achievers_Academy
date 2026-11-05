@@ -316,7 +316,6 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-              </div>
 
               {/* 5. Gallery */}
               <Link

@@ -1,0 +1,334 @@
+{
+  "admin": {
+    "username": "admin@achieversacademy.com",
+    "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "name": "Chief Administrator"
+  },
+  "enquiries": [
+    {
+      "studentName": "Vikram Rajput",
+      "parentName": "Mahesh Rajput",
+      "phone": "9876543210",
+      "email": "mahesh.rajput@example.com",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "program": "JEE Main & Advanced Integrated",
+      "batch": "Morning Batch",
+      "hostelRequired": true,
+      "transportRequired": false,
+      "message": "Looking for integrated hostel batch with scholarship test.",
+      "relationship": "Parent",
+      "preferredMedium": "English",
+      "source": "Website Enquiry Form",
+      "id": "enq-1793939681278-715",
+      "status": "New",
+      "createdAt": "2026-11-06T04:34:41.278Z",
+      "updatedAt": "2026-11-06T04:34:41.278Z"
+    },
+    {
+      "studentName": "Chatbot Visitor",
+      "parentName": "Parent / Prospect",
+      "phone": "9823456789",
+      "campus": "Achievers Group (General)",
+      "program": "Inquiry via AI Assistant",
+      "hostelRequired": false,
+      "transportRequired": false,
+      "message": "Captured via Chatbot: \"My number is 9823456789, please call me for 11th Science Chandwad admission.\"",
+      "source": "AI Chatbot Lead Capture",
+      "id": "enq-1793939681241-296",
+      "status": "New",
+      "createdAt": "2026-11-06T04:34:41.241Z",
+      "updatedAt": "2026-11-06T04:34:41.241Z"
+    },
+    {
+      "studentName": "Vikram Rajput",
+      "parentName": "Mahesh Rajput",
+      "phone": "9876543210",
+      "email": "mahesh.rajput@example.com",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "program": "JEE Main & Advanced Integrated",
+      "batch": "Morning Batch",
+      "hostelRequired": true,
+      "transportRequired": false,
+      "message": "Looking for integrated hostel batch with scholarship test.",
+      "relationship": "Parent",
+      "preferredMedium": "English",
+      "source": "Website Enquiry Form",
+      "id": "enq-1793939583315-764",
+      "status": "New",
+      "createdAt": "2026-11-06T04:33:03.315Z",
+      "updatedAt": "2026-11-06T04:33:03.315Z"
+    },
+    {
+      "studentName": "Chatbot Visitor",
+      "parentName": "Parent / Prospect",
+      "phone": "9823456789",
+      "campus": "Achievers Group (General)",
+      "program": "Inquiry via AI Assistant",
+      "hostelRequired": false,
+      "transportRequired": false,
+      "message": "Captured via Chatbot: \"My number is 9823456789, please call me for 11th Science Chandwad admission.\"",
+      "source": "AI Chatbot Lead Capture",
+      "id": "enq-1793939583277-851",
+      "status": "New",
+      "createdAt": "2026-11-06T04:33:03.277Z",
+      "updatedAt": "2026-11-06T04:33:03.277Z"
+    },
+    {
+      "id": "enq-001",
+      "studentName": "Aarav Patil",
+      "parentName": "Sanjay Patil",
+      "phone": "9822012345",
+      "email": "sanjay.patil@example.com",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "program": "JEE Prep (11th Science)",
+      "batch": "Morning Batch",
+      "hostelRequired": true,
+      "transportRequired": false,
+      "message": "Looking for integrated 11th + JEE coaching with hostel accommodation.",
+      "relationship": "Father",
+      "preferredMedium": "English",
+      "source": "Website",
+      "status": "New",
+      "notes": "Parent requested hostel mess details and batch schedule.",
+      "createdAt": "2026-11-04T04:33:03.240Z",
+      "updatedAt": "2026-11-04T04:33:03.240Z"
+    },
+    {
+      "id": "enq-002",
+      "studentName": "Sneha Shinde",
+      "parentName": "Ramesh Shinde",
+      "phone": "9423098765",
+      "email": "ramesh.shinde@example.com",
+      "campus": "Wisdom International School (Niphad)",
+      "program": "Class 8 (CBSE)",
+      "batch": "Regular Batch",
+      "hostelRequired": false,
+      "transportRequired": true,
+      "message": "Need bus route information from Pimpalgaon Baswant to Niphad.",
+      "relationship": "Father",
+      "preferredMedium": "English",
+      "source": "Website",
+      "status": "Contacted",
+      "notes": "Shared bus route #3 timetable and fee structure via WhatsApp.",
+      "createdAt": "2026-11-05T04:33:03.240Z",
+      "updatedAt": "2026-11-06T00:33:03.240Z"
+    },
+    {
+      "id": "enq-003",
+      "studentName": "Rohan Deshmukh",
+      "parentName": "Pravin Deshmukh",
+      "phone": "8888123456",
+      "email": "pravin.desh@example.com",
+      "campus": "Achievers World School (Manmad)",
+      "program": "Class 1 (Primary)",
+      "batch": "Morning Batch",
+      "hostelRequired": false,
+      "transportRequired": true,
+      "message": "Inquiring for upcoming academic session admissions and toddler/primary curriculum.",
+      "relationship": "Father",
+      "preferredMedium": "English",
+      "source": "WhatsApp",
+      "status": "In Review",
+      "notes": "Campus visit scheduled for this Saturday.",
+      "createdAt": "2026-11-05T16:33:03.240Z",
+      "updatedAt": "2026-11-06T02:33:03.240Z"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t-1",
+      "name": "Rohan More",
+      "role": "JEE Main (99.12 Percentile) - Chandwad Campus",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "quote": "The guidance and structured preparation at Achievers helped me crack JEE with confidence. The faculty support, regular tests, and doubt-solving sessions made a huge difference in my performance.",
+      "scoreOrYear": "99.12 %ile",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": "t-2",
+      "name": "Pooja Kulkarni",
+      "role": "NEET Qualifier (635/720) - Medical Batch",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "quote": "Achievers provided the perfect environment for NEET preparation. The NCERT-oriented test series, hostel night-reading room, and disciplined daily routine kept me focused throughout.",
+      "scoreOrYear": "635 / 720",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": "t-3",
+      "name": "Gaurav Jadhav",
+      "role": "MHT-CET (98.84 Percentile) - Engineering Batch",
+      "campus": "Achievers World School (Manmad)",
+      "quote": "Achievers provided the perfect environment for MHT-CET preparation. The study material and practice sessions were extremely helpful and boosted my score significantly.",
+      "scoreOrYear": "98.84 %ile",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": "t-4",
+      "name": "Sunita & Nitin Ahire",
+      "role": "Parents of Ananya (Class 7)",
+      "campus": "Wisdom International School (Niphad)",
+      "quote": "We are very grateful for the caring atmosphere and state-of-the-art infrastructure at Wisdom International. The teachers give individual attention to each child, and the transport bus with GPS gives us complete peace of mind.",
+      "scoreOrYear": "Parent Feedback",
+      "rating": 5,
+      "featured": true
+    }
+  ],
+  "results": [
+    {
+      "id": "res-1",
+      "exam": "HSC Maharashtra State Board",
+      "studentName": "HSC Science Toppers Batch",
+      "score": "100% Pass Result",
+      "rankOrPercentile": "District Rankers",
+      "stream": "Science Stream (PCM & PCB)",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "year": "2024-2025",
+      "image": "/images/static_result_HSC.jpeg"
+    },
+    {
+      "id": "res-2",
+      "exam": "JEE Main & Advanced",
+      "studentName": "Top IIT Aspirants",
+      "score": "99+ Percentile Club",
+      "rankOrPercentile": "All India Qualified",
+      "stream": "Engineering",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "year": "2024",
+      "image": "/images/static_result_student1.jpg"
+    },
+    {
+      "id": "res-3",
+      "exam": "NEET Medical Entrance",
+      "studentName": "MBBS Selections",
+      "score": "Govt Medical College Qualified",
+      "rankOrPercentile": "Top Scores 600+",
+      "stream": "Medical",
+      "campus": "Achievers IIT & Medical (Chandwad)",
+      "year": "2024",
+      "image": "/images/static_result_student5.jpg"
+    },
+    {
+      "id": "res-4",
+      "exam": "MHT-CET Engineering & Pharmacy",
+      "studentName": "CET Champions",
+      "score": "98.5+ Percentile",
+      "rankOrPercentile": "State Rankers",
+      "stream": "Engineering / Pharmacy",
+      "campus": "Achievers World School (Manmad)",
+      "year": "2024",
+      "image": "/images/static_result_student7.jpg"
+    }
+  ],
+  "chatbotKB": [
+    {
+      "id": "kb-1",
+      "category": "Campuses",
+      "question": "Where are Achievers Academy campuses located?",
+      "keywords": [
+        "campus",
+        "campuses",
+        "branches",
+        "location",
+        "address",
+        "kaha hai",
+        "kahan",
+        "manmad",
+        "chandwad",
+        "niphad"
+      ],
+      "answerEn": "Achievers Group of Institutes operates 3 premium campuses across Nashik district:\n1. Achievers World School: Shrinath Dream City, Umrane Road, Manmad.\n2. Achievers IIT & Medical: Opp. Indian Oil Petrol Pump, Chandwad-Manmad Road, Chandwad.\n3. Wisdom International School: Niphad-Sambhajinagar Road, Niphad.\nEach campus has modern classrooms, state-of-the-art laboratories, and sports grounds.",
+      "answerHi": "अचीवर्स ग्रुप ऑफ इंस्टीट्यूट्स के 3 प्रमुख कैंपस हैं:\n1. अचीवर्स वर्ल्ड स्कूल – श्रीनाथ ड्रीम सिटी, उमराने रोड, मनमाड।\n2. अचीवर्स आईआईटी एवं मेडिकल – इंडियन ऑयल पेट्रोल पंप के सामने, चांदवड-मनमाड रोड, चांदवड।\n3. विज़डम इंटरनेशनल स्कूल – निफाड-संभाजीनगर रोड, निफाड।"
+    },
+    {
+      "id": "kb-2",
+      "category": "Admissions",
+      "question": "How do I apply for admission?",
+      "keywords": [
+        "admission",
+        "apply",
+        "entry",
+        "process",
+        "form",
+        "pravesh",
+        "daakhila",
+        "kaise apply kare"
+      ],
+      "answerEn": "Admissions are open for Nursery to Class 12th (CBSE & State Board) as well as integrated JEE, NEET, and MHT-CET coaching. You can apply directly through our online Admission form on this website, or visit any campus, or call our admission desk at +91 8459360161 / +91 8999542174.",
+      "answerHi": "नर्सरी से 12वीं तक (CBSE एवं महाराष्ट्र स्टेट बोर्ड) और JEE, NEET, MHT-CET कोचिंग के लिए प्रवेश खुले हैं। आप वेबसाइट पर ऑनलाइन एडमिशन फॉर्म भर सकते हैं या हमारे हेल्पलाइन +91 8459360161 / +91 8999542174 पर संपर्क कर सकते हैं।"
+    },
+    {
+      "id": "kb-3",
+      "category": "Hostel",
+      "question": "Are hostel facilities available for students?",
+      "keywords": [
+        "hostel",
+        "residential",
+        "stay",
+        "room",
+        "boarding",
+        "mess",
+        "food",
+        "rahena",
+        "khana"
+      ],
+      "answerEn": "Yes! We offer comprehensive residential and hostel facilities for both boys and girls. Facilities include 24x7 security and warden care, nutritious hygienic meals, daily fitness & yoga routines, dedicated night study reading rooms, and strict disciplined environment.",
+      "answerHi": "हाँ! हमारे पास छात्र एवं छात्राओं के लिए सुरक्षित और सुसज्जित हॉस्टल (आवासीय) की सुविधा उपलब्ध है। इसमें पौष्टिक भोजन, 24/7 सुरक्षा, वार्डन की देखरेख, योग और रात में पढ़ने के लिए समर्पित नाइट स्टडी रूम शामिल हैं।"
+    },
+    {
+      "id": "kb-4",
+      "category": "Transport",
+      "question": "Is bus transportation available?",
+      "keywords": [
+        "transport",
+        "bus",
+        "vehicle",
+        "pickup",
+        "drop",
+        "safety",
+        "gps",
+        "gadi",
+        "van"
+      ],
+      "answerEn": "Yes, Achievers operates a dedicated fleet of school buses covering Manmad, Chandwad, Niphad, and surrounding villages. All buses are equipped with GPS tracking, CCTV surveillance, first aid, and experienced background-verified drivers.",
+      "answerHi": "हाँ, अचीवर्स की स्कूल बस सेवा मनमाड, चांदवड, निफाड और आसपास के ग्रामीण क्षेत्रों में उपलब्ध है। सभी बसें जीपीएस ट्रैकिंग, सीसीटीवी और प्रशिक्षित चालकों से सुसज्जित हैं।"
+    },
+    {
+      "id": "kb-5",
+      "category": "Courses",
+      "question": "What competitive exam coaching is offered?",
+      "keywords": [
+        "jee",
+        "neet",
+        "cet",
+        "mht-cet",
+        "iit",
+        "medical",
+        "engineering",
+        "competitive",
+        "coaching"
+      ],
+      "answerEn": "Our Chandwad campus specializes in integrated 11th & 12th Science coaching for JEE (Main & Advanced), NEET (Medical UG), and MHT-CET. We provide expert faculty mentors, regular mock test series, doubt clearing sessions, and personalized performance tracking.",
+      "answerHi": "हमारे चांदवड कैंपस में 11वीं और 12वीं साइंस के साथ JEE (Main & Advanced), NEET और MHT-CET की गहन तैयारी कराई जाती है। इसमें अनुभवी शिक्षक, मॉक टेस्ट सीरीज और विशेष डाउट सेशन शामिल हैं।"
+    },
+    {
+      "id": "kb-6",
+      "category": "General",
+      "question": "What are the contact numbers and email?",
+      "keywords": [
+        "contact",
+        "phone",
+        "mobile",
+        "call",
+        "email",
+        "number",
+        "whatsapp",
+        "sampark"
+      ],
+      "answerEn": "You can contact us at:\n• Phone: +91 8459360161 / +91 8999542174 / +91 8385853131\n• Email: achieversgroupofinstitutes@gmail.com\n• WhatsApp: Click the WhatsApp floating button on any page to chat directly with our counselors!",
+      "answerHi": "आप हमसे निम्नलिखित नंबरों पर संपर्क कर सकते हैं:\n• फोन: +91 8459360161 / +91 8999542174 / +91 8385853131\n• ईमेल: achieversgroupofinstitutes@gmail.com\n• व्हाट्सएप: वेबसाइट पर दिए गए फ्लोटिंग व्हाट्सएप बटन पर क्लिक करें।"
+    }
+  ]
+}

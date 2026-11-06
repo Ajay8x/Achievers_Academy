@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer – Achievers Group</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#eee;}
+
+/* ===== FOOTER ===== */
+.sf{
+  background:linear-gradient(160deg,#06101f 0%,#0b2258 55%,#08183a 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  font-family:'Inter',sans-serif;
+}
+
+/* shimmer top bar */
+.sf-bar{
+  height:4px;
+  background:linear-gradient(90deg,#ffd24d,#d4a574,#ffd24d);
+  background-size:200% 100%;
+  animation:shimmer 3s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+
+/* bg orbs */
+.sf-orb{
+  position:absolute;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,210,77,.06) 0%,transparent 70%);
+}
+.sf-orb-1{width:560px;height:560px;top:-200px;right:-160px;}
+.sf-orb-2{width:380px;height:380px;bottom:-120px;left:-100px;}
+
+/* ===== MAIN ROW ===== */
+.sf-row{
+  position:relative;z-index:2;
+  max-width:1400px;
+  margin:0 auto;
+  padding:44px 40px 36px;
+  display:grid;
+  /* 3 branch cols + quick links + contact */
+  grid-template-columns: repeat(3,1fr) 0.85fr 1.1fr;
+  gap:28px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+/* ── shared heading ── */
+.sf-heading{
+  font-size:13px;font-weight:700;color:#fff;
+  letter-spacing:.5px;
+  margin-bottom:16px;padding-bottom:10px;
+  position:relative;
+}
+.sf-heading::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:32px;height:2.5px;
+  background:linear-gradient(90deg,#ffd24d,#d4a574);
+  border-radius:2px;
+}
+
+/* ── branch card ── */
+.sf-branch{
+  /*background:rgba(255,255,255,.04);*/
+  /*border:1px solid rgba(255,255,255,.09);*/
+  border-radius:14px;
+  padding:20px 18px;
+  display:flex;flex-direction:column;
+  transition:transform .3s,background .3s,border-color .3s;
+}
+.sf-branch:hover{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,210,77,.3);
+  transform:translateY(-4px);
+}
+
+/* logo circle */
+.sf-b-logo{
+  width:130px;height:130px;border-radius:50%;
+
+
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;margin-bottom:12px;flex-shrink:0;
+}
+.sf-b-logo img{width:100%;height:100%;object-fit:cover;}
+.sf-b-initials{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:900;color:#ffd24d;
+}
+
+/* badge */
+.sf-badge{
+    width:80px;
+  display:inline-block;margin-bottom:6px;
+  background:rgba(255,210,77,.13);
+  border:1px solid rgba(255,210,77,.28);
+  border-radius:20px;padding:2px 9px;
+  font-size:9.5px;font-weight:700;color:#ffd24d;letter-spacing:.7px;
+}
+
+/* branch name */
+.sf-b-name{
+  font-size:13.5px;font-weight:700;color:#fff;
+  line-height:1.3;margin-bottom:12px;
+}
+
+.sf-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:12px;}
+
+/* address row */
+.sf-b-addr{
+  display:flex;align-items:flex-start;gap:9px;
+  margin-bottom:5px;flex:1;
+}
+.sf-pin{
+  width:30px;height:30px;min-width:30px;border-radius:8px;
+  background:linear-gradient(135deg,#ffd24d,#d4a574);
+  display:flex;align-items:center;justify-content:center;
+  color:#06101f;font-size:13px;margin-top:1px;flex-shrink:0;
+}
+.sf-addr-txt{font-size:12px;color:rgba(255,255,255,.58);line-height:1.6;}
+
+/* map link */
+.sf-map-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,210,77,.09);
+  border:1px solid rgba(255,210,77,.22);
+  border-radius:7px;padding:6px 12px;
+  font-size:11.5px;font-weight:600;color:#ffd24d;
+  text-decoration:none;align-self:flex-start;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.sf-map-btn:hover{background:rgba(255,210,77,.18);border-color:rgba(255,210,77,.45);transform:translateX(3px);}
+.sf-map-btn i{font-size:10px;}
+
+/* ── quick links col ── */
+.sf-links{list-style:none;padding:0;margin:0;}
+.sf-links li{margin-bottom:9px;}
+.sf-links a{
+  color:rgba(255,255,255,.58);text-decoration:none;
+  font-size:13px;display:flex;align-items:center;gap:7px;
+  transition:color .2s,gap .2s;
+}
+.sf-arr{
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(255,210,77,.11);
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;color:#ffd24d;flex-shrink:0;
+  transition:background .2s;
+}
+.sf-links a:hover{color:#ffd24d;gap:11px;}
+.sf-links a:hover .sf-arr{background:rgba(255,210,77,.26);}
+
+/* social icons */
+.sf-social-lbl{
+  font-size:9.5px;font-weight:700;color:rgba(255,255,255,.32);
+  letter-spacing:1.1px;text-transform:uppercase;
+  margin:18px 0 10px;
+}
+.sf-socials{display:flex;gap:8px;flex-wrap:wrap;}
+.sf-soc{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#fff;text-decoration:none;
+  transition:transform .25s,box-shadow .25s;flex-shrink:0;
+}
+.sf-soc:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.35);}
+.sf-soc.fb{background:#1877f2;}
+.sf-soc.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);}
+.sf-soc.yt{background:#ff0000;}
+.sf-soc.tw{background:#1da1f2;}
+
+/* ── contact col ── */
+.sf-contact-list{list-style:none;padding:0;margin:0;}
+.sf-ci{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 10px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.05);
+  background:rgba(255,255,255,.03);
+  margin-bottom:7px;
+  transition:border-color .25s,background .25s,transform .25s;
+}
+.sf-ci:hover{
+  border-color:rgba(255,210,77,.18);
+  background:rgba(255,255,255,.06);
+  transform:translateX(4px);
+}
+.sf-ci-icon{
+  width:34px;height:34px;min-width:34px;border-radius:8px;
+  background:linear-gradient(135deg,#ffd24d,#d4a574);
+  display:flex;align-items:center;justify-content:center;
+  color:#06101f;font-size:13px;flex-shrink:0;
+}
+.sf-ci-txt{font-size:12px;color:rgba(255,255,255,.62);line-height:1.5;padding-top:2px;}
+.sf-ci-txt strong{color:#fff;font-size:11px;display:block;margin-bottom:2px;letter-spacing:.3px;}
+.sf-ci-txt a{color:rgba(255,255,255,.62);text-decoration:none;transition:color .2s;}
+.sf-ci-txt a:hover{color:#ffd24d;}
+.sf-sep{color:rgba(255,255,255,.28);margin:0 3px;}
+
+/* ===== BOTTOM BAR ===== */
+.sf-bottom{
+  position:relative;z-index:2;
+  padding:18px 40px;
+}
+.sf-bottom-inner{
+  max-width:1400px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.sf-copy,.sf-credit{font-size:12.5px;color:rgba(255,255,255,.38);margin:0;}
+.sf-credit a{color:#ffd24d;text-decoration:none;font-weight:600;transition:color .2s;}
+.sf-credit a:hover{color:#fff;}
+.sf-bdiv{width:1px;height:20px;background:rgba(255,255,255,.08);}
+
+/* ===== RESPONSIVE ===== */
+
+/* 4-col: collapse 3 branches to 2 rows top */
+@media(max-width:1200px){
+  .sf-row{
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:auto auto;
+  }
+  /* quick links + contact span full row below */
+  .sf-col-links{ grid-column:1/2; }
+  .sf-col-contact{ grid-column:3/4; }
+}
+
+@media(max-width:900px){
+  .sf-row{
+    grid-template-columns:1fr 1fr;
+    padding:32px 24px 28px;
+    gap:20px;
+  }
+  .sf-col-links{ grid-column:1/2; }
+  .sf-col-contact{ grid-column:2/3; }
+}
+
+@media(max-width:600px){
+  .sf-row{
+    grid-template-columns:1fr;
+    padding:28px 18px 24px;
+    gap:18px;
+  }
+  .sf-col-links{ grid-column:auto; }
+  .sf-col-contact{ grid-column:auto; }
+  .sf-bottom{padding:14px 18px;}
+  .sf-bottom-inner{flex-direction:column;text-align:center;gap:8px;}
+  .sf-bdiv{display:none;}
+}
+</style>
+</head>
+<body>
+
+<footer class="sf">
+  <div class="sf-bar"></div>
+  <div class="sf-orb sf-orb-1"></div>
+  <div class="sf-orb sf-orb-2"></div>
+
+  <!-- ===== SINGLE ROW GRID ===== -->
+  <div class="sf-row">
+
+    <!-- ── Branch 1 ── -->
+    <div class="sf-branch">
+      <div class="sf-b-logo">
+        <img src="static/Web Logo 1.png" alt="Branch 1"
+          onerror="this.style.display='none';this.parentElement.querySelector('.sf-b-initials').style.display='block'">
+        <span class="sf-b-initials" style="display:none">AW</span>
+      </div>
+      <div class="sf-badge">Branch 01</div>
+      <div class="sf-b-name">Achievers World School</div>
+      <div class="sf-divider"></div>
+      <div class="sf-b-addr">
+        <div class="sf-pin"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sf-addr-txt">Shrinath Dream City, Umrane Road, Manmad</div>
+      </div>
+      <a href="https://maps.app.goo.gl/pMA1e1Y4wTUH5niu9" target="_blank" class="sf-map-btn">
+        <i class="fa-solid fa-map-location-dot"></i> View on Map
+      </a>
+    </div>
+
+    <!-- ── Branch 2 ── -->
+    <div class="sf-branch">
+      <div class="sf-b-logo">
+        <img src="static/achievers group of institutes.png" alt="Branch 2"
+          onerror="this.style.display='none';this.parentElement.querySelector('.sf-b-initials').style.display='block'">
+        <span class="sf-b-initials" style="display:none">AI</span>
+      </div>
+      <div class="sf-badge">Branch 02</div>
+      <div class="sf-b-name">Achievers IIT &amp; Medical</div>
+      <div class="sf-divider"></div>
+      <div class="sf-b-addr">
+        <div class="sf-pin"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sf-addr-txt">Opp. Indian Oil Petrol Pump, Chandwad-Manmad Road, Chandwad</div>
+      </div>
+      <a href="https://maps.app.goo.gl/pijmQZWuMh8ZrB6D8" target="_blank" class="sf-map-btn">
+        <i class="fa-solid fa-map-location-dot"></i> View on Map
+      </a>
+    </div>
+
+    <!-- ── Branch 3 ── -->
+    <div class="sf-branch">
+      <div class="sf-b-logo">
+        <img src="static/Wisdom-logo.png" alt="Branch 3"
+          onerror="this.style.display='none';this.parentElement.querySelector('.sf-b-initials').style.display='block'">
+        <span class="sf-b-initials" style="display:none">WI</span>
+      </div>
+      <div class="sf-badge">Branch 03</div>
+      <div class="sf-b-name">Wisdom International School</div>
+      <div class="sf-divider"></div>
+      <div class="sf-b-addr">
+        <div class="sf-pin"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sf-addr-txt">Niphad-Sambhajinagar Road, Niphad</div>
+      </div>
+      <a href="https://maps.app.goo.gl/P9B9LTBpr1PwjfGr6" target="_blank" class="sf-map-btn">
+        <i class="fa-solid fa-map-location-dot"></i> View on Map
+      </a>
+    </div>
+
+    <!-- ── Quick Links + Social ── -->
+    <div class="sf-col-links">
+      <h4 class="sf-heading">Quick Links</h4>
+      <ul class="sf-links">
+        <li><a href="index.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Home</a></li>
+        <li><a href="about.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>About Us</a></li>
+        <li><a href="accreditations.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Accreditations</a></li>
+        <li><a href="admission.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Admissions</a></li>
+        <li><a href="gallery.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Gallery</a></li>
+        <li><a href="contact.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Contact Us</a></li>
+        <li><a href="privacy-policy.html"><span class="sf-arr"><i class="fa-solid fa-arrow-right"></i></span>Privacy Policy</a></li>
+      </ul>
+     
+    </div>
+
+    <!-- ── Get In Touch ── -->
+    <div class="sf-col-contact">
+      <h4 class="sf-heading">Get In Touch</h4>
+      <ul class="sf-contact-list">
+        <li class="sf-ci">
+          <div class="sf-ci-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="sf-ci-txt">
+            <strong>Phone</strong>
+            <a href="tel:8385853131">8385853131</a>
+            <span class="sf-sep">/</span>
+            <a href="tel:8999542174">8999542174</a>
+          </div>
+        </li>
+        <li class="sf-ci">
+          <div class="sf-ci-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="sf-ci-txt">
+            <strong>Email</strong>
+            <a href="mailto:achieversgroupofinstitutes@gmail.com">achieversgroupofinstitutes@gmail.com</a>
+          </div>
+        </li>
+        <div class="sf-social-lbl">Follow Us</div>
+      <div class="sf-socials">
+        <a href="https://www.facebook.com/achieversgroupofinstitute/" class="sf-soc fb" target="_blank" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/achieversgroupofinstitute/" class="sf-soc ig" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@achieversacademychandwad6869/featured" class="sf-soc yt" target="_blank" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="#" class="sf-soc tw" aria-label="Twitter">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </div>
+      </ul>
+    </div>
+
+  </div><!-- /.sf-row -->
+
+  <!-- ===== BOTTOM BAR ===== -->
+  <div class="sf-bottom">
+    <div class="sf-bottom-inner">
+      <p class="sf-copy">&copy; 2025 Achievers Group of Institutes. All Rights Reserved.</p>
+      <div class="sf-bdiv"></div>
+      <p class="sf-credit">Developed by <a href="https://www.puvsoft.com" target="_blank" rel="noopener">PUVSOFT PVT LTD</a></p>
+    </div>
+  </div>
+
+</footer>
+</body>
+</html>

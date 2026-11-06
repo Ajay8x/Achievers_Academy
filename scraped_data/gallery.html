@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="icon" href="static/Web Logo 1.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <div>
+        <h2 class="section-title" style="text-align:center; margin:40px 0 20px;">Gallery</h2>
+        <!-- <div class="page-title" id="page-title">
+            <h1>Little Wonders International</h1>
+            <div class="underline"></div>
+        </div> -->
+
+        <!--<div class="gallery">-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=activities'">-->
+        <!--        <img src="static/Gallery/activities/activity14.jpg" alt="">-->
+        <!--        <div class="overlay">Activities</div>-->
+                
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=infrastructure'">-->
+        <!--        <img src="static/Gallery/infra/1.jpg" alt="">-->
+        <!--        <div class="overlay">Infrastructure</div>-->
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=computarlab'">-->
+        <!--        <img src="static/Gallery/Computar Lab/comp lab_31 - Photo.jpg" alt="">-->
+        <!--        <div class="overlay">Computar Lab</div>-->
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=classroom'">-->
+        <!--        <img src="static/Gallery/Classroom Jr. KG/img1.jpg" alt="">-->
+        <!--        <div class="overlay">Classroom Jr.KG</div>-->
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=chemistrylab'">-->
+        <!--        <img src="static/Gallery/Chemistry Lab/Day view_1 - Photo.jpg" alt="">-->
+        <!--        <div class="overlay">Chemistry Lab</div>-->
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=biologylab'">-->
+        <!--        <img src="static/Gallery/Biology Lab/Day view_6 - Photo.jpg" alt="">-->
+        <!--        <div class="overlay">Biology Lab</div>-->
+        <!--    </div>-->
+        <!--    <div class="gallery-item" onclick="window.location.href='image.html?event=auditorium'">-->
+        <!--        <img src="static/Gallery/auditorium/Auditorium-1_41 - Photo.jpg" alt="">-->
+        <!--        <div class="overlay">Auditorium</div>-->
+        <!--    </div>-->
+
+        <!--</div>-->
+        <div class="gallery">
+    
+    <div class="gallery-item" onclick="window.location.href='image.html?event=activities'">
+        <img src="static/Gallery/activities/activity14.jpg" alt="Activities">
+        <p class="gallery-title">Activities</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=infrastructure'">
+        <img src="static/Gallery/infra/1.jpg" alt="Infrastructure">
+        <p class="gallery-title">Infrastructure</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=computarlab'">
+        <img src="static/Gallery/Computar Lab/comp lab_31 - Photo.jpg" alt="Computer Lab">
+        <p class="gallery-title">Computer Lab</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=classroom'">
+        <img src="static/Gallery/Classroom Jr. KG/img1.jpg" alt="Classroom Jr. KG">
+        <p class="gallery-title">Classroom Jr. KG</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=chemistrylab'">
+        <img src="static/Gallery/Chemistry Lab/Day view_1 - Photo.jpg" alt="Chemistry Lab">
+        <p class="gallery-title">Chemistry Lab</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=biologylab'">
+        <img src="static/Gallery/Biology Lab/Day view_6 - Photo.jpg" alt="Biology Lab">
+        <p class="gallery-title">Biology Lab</p>
+    </div>
+
+    <div class="gallery-item" onclick="window.location.href='image.html?event=auditorium'">
+        <img src="static/Gallery/auditorium/Auditorium-1_41 - Photo.jpg" alt="Auditorium">
+        <p class="gallery-title">Auditorium</p>
+    </div>
+
+</div>
+    </div>
+    <div id="footer"></div>
+    <style>
+        .page-title {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.page-title h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.underline {
+    width: 80px;
+    height: 3px;
+    background: #f6cf57;
+    margin: 0 auto;
+}
+
+
+
+/* ===== GALLERY GRID ===== */
+.gallery {
+    margin: auto;
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    background-color: #fff;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+.gallery-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #ec9838;
+}
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s ease;
+    text-align: center;
+    padding: 10px;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 60px 0 40px;
+    color: #0f2b71;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #ec9838;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+    .gallery {
+        padding: 40px 30px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 24px;
+        margin: 30px 0 20px;
+    }
+
+    .gallery {
+        padding: 20px;
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item img {
+        height: 160px;
+    }
+
+    .overlay {
+        font-size: 18px;
+    }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .gallery-item img {
+        height: 180px;
+    }
+
+    .overlay {
+        font-size: 18px;
+    }
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+fetch("navbar.html")
+.then(res => res.text())
+.then(html => {
+    document.getElementById("navbar").innerHTML = html;
+
+    initNavbar(); // 🔥 IMPORTANT
+});
+
+
+function initNavbar() {
+
+    /* ================= ACTIVE LINK ================= */
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".nb-link[href]").forEach(link => {
+        const href = link.getAttribute("href").split("/").pop();
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
+
+    /* ================= DROPDOWN ================= */
+    const items = document.querySelectorAll(".nb-item");
+
+    items.forEach(item => {
+        const btn = item.querySelector("button.nb-link");
+
+        if (!btn) return;
+
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // close others
+            items.forEach(i => {
+                if (i !== item) i.classList.remove("open");
+            });
+
+            // toggle current
+            item.classList.toggle("open");
+        });
+    });
+
+
+    /* close dropdown on outside click */
+    document.addEventListener("click", function () {
+        items.forEach(i => i.classList.remove("open"));
+    });
+
+
+    /* ================= MOBILE TOGGLE ================= */
+    const hamburger = document.getElementById("hamburger");
+    const drawer = document.getElementById("mobileDrawer");
+
+    if (hamburger && drawer) {
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("is-open");
+            drawer.classList.toggle("open");
+        });
+    }
+
+
+    /* ================= MOBILE ACCORDION ================= */
+    function setup(btnId, subId) {
+        const btn = document.getElementById(btnId);
+        const sub = document.getElementById(subId);
+
+        if (!btn || !sub) return;
+
+        btn.addEventListener("click", function () {
+            sub.classList.toggle("open");
+        });
+    }
+
+    setup("mobileResultBtn", "subResult");
+    setup("mobileCourseBtn", "subCourses");
+}
+</script>
+    <script>
+
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

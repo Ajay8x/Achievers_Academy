@@ -1,0 +1,185 @@
+================================================================================
+ACHIEVERS ACADEMY - COMPLETE MASTER LINK DIRECTORY & FULL PROJECT HANDOVER
+================================================================================
+
+Client: Achievers Academy / Achievers Group of Institutes
+Reference Live Website: https://achieversedugroup.com/
+Local Server Address:   http://localhost:3000
+
+--------------------------------------------------------------------------------
+SECTION 1: ALL WEBSITE PAGES (CLICKABLE / COPYABLE URLS)
+--------------------------------------------------------------------------------
+
+1. Main Institutional Pages:
+   • Homepage (Hero, Campuses, Highlights, Results, CTA):
+     http://localhost:3000/
+   • About Us (Legacy, Vision, Mission, Leadership):
+     http://localhost:3000/about
+   • Academic Results & 100% HSC Toppers:
+     http://localhost:3000/results
+   • Institutional Accreditations (CBSE, State Board, MSBTE, PCI):
+     http://localhost:3000/accreditations
+   • Admission Process & Online Registration Form:
+     http://localhost:3000/admission
+   • Campus Photo Gallery (Filterable Lightbox):
+     http://localhost:3000/gallery
+   • Contact Us (Campus Addresses, Google Maps, Phone Helplines):
+     http://localhost:3000/contact
+
+2. Campus Specific Pages:
+   • Campuses Comparative Overview:
+     http://localhost:3000/campuses
+   • Branch 01: Achievers World School (Manmad):
+     http://localhost:3000/campuses/achievers-world-school-manmad
+   • Branch 02: Achievers IIT & Medical (Chandwad):
+     http://localhost:3000/campuses/achievers-iit-medical-chandwad
+   • Branch 03: Wisdom International School (Niphad):
+     http://localhost:3000/campuses/wisdom-international-school-niphad
+
+3. Academic Programs Pages:
+   • All Programs Overview:
+     http://localhost:3000/programs
+   • Nursery, Junior KG & Senior KG (Toddler Wing):
+     http://localhost:3000/programs/pre-primary
+   • Primary & Secondary Schooling (Class 1 to 10 - CBSE/State Board):
+     http://localhost:3000/programs/primary-secondary
+   • Higher Secondary Science (Class 11 & 12 Science):
+     http://localhost:3000/programs/higher-secondary
+   • Competitive Test Prep (JEE Main/Adv, NEET Medical UG, MHT-CET):
+     http://localhost:3000/programs/competitive-exams
+
+4. Institutional Facilities Pages:
+   • Residential Hostel & Mess Facilities:
+     http://localhost:3000/facilities/hostel
+   • Transportation Fleet (GPS Tracked School Buses):
+     http://localhost:3000/facilities/transport
+
+5. SEO & Search Engine Links:
+   • Dynamic XML Sitemap:
+     http://localhost:3000/sitemap.xml
+   • Search Engine Robots Configuration:
+     http://localhost:3000/robots.txt
+
+--------------------------------------------------------------------------------
+SECTION 2: ADMIN DASHBOARD & MANAGEMENT URLS
+--------------------------------------------------------------------------------
+
+• Admin Login Page:
+  http://localhost:3000/admin/login
+
+• Admin Overview Dashboard (KPI Counters, Campus Stats, Lead Feeds):
+  http://localhost:3000/admin
+
+• Admission Enquiries Management (Search, Filter, Edit Notes, Delete):
+  http://localhost:3000/admin/enquiries
+
+• Instant 1-Click CSV Roster Download:
+  http://localhost:3000/api/admission?format=csv
+
+• AI Chatbot Knowledge Base Manager (Add/Edit/Delete FAQs in EN & HI):
+  http://localhost:3000/admin/chatbot-kb
+
+ADMIN LOGIN CREDENTIALS:
+  Username / Email: admin@achieversacademy.com
+  Password:         Achievers@2025
+  Session Token:    HTTP-Only JWT Cookie (7-day duration)
+
+--------------------------------------------------------------------------------
+SECTION 3: DIRECT WHATSAPP CHAT LINKS (CLICK TO CHAT)
+--------------------------------------------------------------------------------
+
+Primary WhatsApp Counseling Number: +91 8459360161
+Alternate Numbers:                  +91 8999542174 / +91 8385853131
+
+• General Admission WhatsApp Inquiry:
+  https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20I%20want%20to%20inquire%20about%20admissions.
+
+• Manmad Campus WhatsApp Inquiry:
+  https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20I%20want%20to%20inquire%20about%20Achievers%20World%20School%20Manmad.
+
+• Chandwad JEE / NEET Coaching WhatsApp Inquiry:
+  https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20I%20want%20to%20inquire%20about%20JEE/NEET%20at%20Chandwad%20campus.
+
+• Niphad Wisdom International WhatsApp Inquiry:
+  https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20I%20want%20to%20inquire%20about%20Wisdom%20International%20School%20Niphad.
+
+• Hostel & Bus Transport WhatsApp Inquiry:
+  https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20please%20share%20hostel%20and%20transport%20details.
+
+--------------------------------------------------------------------------------
+SECTION 4: GOOGLE MAPS LOCATION LINKS
+--------------------------------------------------------------------------------
+
+• Branch 01 - Achievers World School, Manmad:
+  https://maps.google.com/?q=Achievers+World+School+Manmad
+  Address: Shrinath Dream City, Umrane Road, Manmad, Dist. Nashik
+
+• Branch 02 - Achievers IIT & Medical, Chandwad:
+  https://maps.google.com/?q=Achievers+IIT+Medical+Chandwad
+  Address: Opp. Indian Oil Petrol Pump, Chandwad-Manmad Road, Chandwad, Dist. Nashik
+
+• Branch 03 - Wisdom International School, Niphad:
+  https://maps.google.com/?q=Wisdom+International+School+Niphad
+  Address: Niphad-Sambhajinagar Road, Niphad, Dist. Nashik
+
+--------------------------------------------------------------------------------
+SECTION 5: BACKEND REST API ENDPOINTS
+--------------------------------------------------------------------------------
+
+1. Submit Admission Enquiry (Public):
+   POST http://localhost:3000/api/admission
+   Body: JSON { studentName, parentName, phone, email, campus, program, hostelRequired, transportRequired, message }
+
+2. List Admission Enquiries (Protected Admin):
+   GET  http://localhost:3000/api/admission?campus=all&status=all&search=
+
+3. Export Enquiries to CSV (Protected Admin):
+   GET  http://localhost:3000/api/admission?format=csv
+
+4. Admin Authentication (Login):
+   POST http://localhost:3000/api/admin/auth
+   Body: JSON { username: "admin@achieversacademy.com", password: "Achievers@2025" }
+
+5. Admin Session Check:
+   GET  http://localhost:3000/api/admin/auth
+
+6. Admin Sign Out:
+   DELETE http://localhost:3000/api/admin/auth
+
+7. Update Enquiry Status & Counselor Notes:
+   PATCH http://localhost:3000/api/admin/enquiries/[id]
+   Body: JSON { status: "Contacted", notes: "Called parent, visit scheduled" }
+
+8. Delete Enquiry:
+   DELETE http://localhost:3000/api/admin/enquiries/[id]
+
+9. AI Virtual Admission Counselor Endpoint:
+   POST http://localhost:3000/api/chat
+   Body: JSON { message: "Hostel me khana aur rehna kaisa hai?" }
+   Features: Multilingual (English, Hindi, Hinglish), Automatic Phone Lead Capture
+
+10. Chatbot Knowledge Base Management:
+    GET / POST / DELETE http://localhost:3000/api/admin/kb
+
+--------------------------------------------------------------------------------
+SECTION 6: HOW TO RUN & DEPLOY
+--------------------------------------------------------------------------------
+
+Start Development Server:
+  npm run dev
+
+Build for Production:
+  npm run build
+
+Run Production Server:
+  npm start
+
+Persistent Database File:
+  data/achievers_db.json
+
+Downloaded Institutional Media:
+  public/images/ (27 authentic photos from achieversedugroup.com)
+
+================================================================================
+END OF MASTER LINK DIRECTORY
+================================================================================

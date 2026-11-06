@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achievers Group of Institutes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body { font-family: 'Inter', sans-serif; }
+
+/* ===== TOP BAR ===== */
+.nb-topbar {
+  background: linear-gradient(180deg, #0a1628 0%, #0f2b71 100%);
+  color: rgba(255,255,255,0.85);
+  padding: 10px 0;
+}
+.nb-topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.nb-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nb-brand img {
+  max-height: 80px;
+  width: auto;
+}
+.nb-brandname {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+.nb-brandname span { color: #D4B068; }
+.nb-tagline {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.nb-contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nb-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+}
+.nb-contact-item svg { opacity: 0.7; flex-shrink: 0; }
+.nb-socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.nb-social-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.nb-social-btn:hover { background: rgba(255,255,255,0.25); }
+
+/* ===== MAIN NAVBAR ===== */
+.nb-nav {
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.nb-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Mobile brand (hidden on desktop) */
+.nb-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #001a42;
+  text-decoration: none;
+}
+.nb-mobile-logo {
+  width: 36px;
+  height: 36px;
+  background: #001a42;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D4A843;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ===== DESKTOP MENU ===== */
+.nb-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
+}
+.nb-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nb-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a2e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  position: relative;
+}
+.nb-link:hover { color: #0044cc; background: #f0f4ff; }
+.nb-link.active { color: #0044cc; font-weight: 600; }
+.nb-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #0044cc;
+  border-radius: 2px;
+}
+.nb-caret {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.22s;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+.nb-item.open > .nb-link .nb-caret { transform: rotate(180deg); }
+
+/* ===== DROPDOWN ===== */
+.nb-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.09);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  min-width: 210px;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10000;
+}
+.nb-item.open > .nb-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.nb-dd-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.35);
+  padding: 8px 14px 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.nb-dd-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  color: #2d2d4e;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.nb-dd-item:hover { background: #f0f4ff; color: #0044cc; }
+.nb-dd-sep {
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  margin: 4px 8px;
+}
+
+/* ===== CTA BUTTON ===== */
+.nb-cta {
+  background: #001a42;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.nb-cta:hover { background: #003080; transform: translateY(-1px); }
+.nb-cta-star { color: #D4A843; font-size: 15px; }
+
+/* ===== HAMBURGER ===== */
+.nb-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 5px;
+  background: none;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+.nb-bar {
+  width: 20px;
+  height: 2px;
+  background: #1a1a2e;
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  display: block;
+}
+/* Hamburger open state */
+.nb-toggle.is-open .nb-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nb-toggle.is-open .nb-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nb-toggle.is-open .nb-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== MOBILE DRAWER ===== */
+.nb-drawer {
+  display: none;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  padding: 10px 16px 20px;
+  flex-direction: column;
+  gap: 2px;
+  /* Smooth slide */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s;
+}
+.nb-drawer.open {
+  display: flex;
+  max-height: 600px;
+}
+.nb-drawer .nb-link {
+  padding: 12px 14px;
+  width: 100%;
+  font-size: 15px;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+.nb-drawer-sub {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 10px;
+  margin-top: 2px;
+  border-left: 2px solid #e8ecf8;
+  margin-left: 14px;
+}
+.nb-drawer-sub.open { display: flex; }
+.nb-drawer-sub .nb-dd-item {
+  font-size: 14px;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+.nb-drawer-cta {
+  margin-top: 12px;
+  background: #001a42;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+  width: 100%;
+}
+.nb-drawer-cta:hover { background: #003080; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .nb-topbar { display: none; }
+  .nb-toggle { display: flex; }
+  .nb-menu { display: none; }
+  .nb-cta { display: none; }
+  .nb-mobile-brand { display: flex; }
+  .nb-nav-inner { height: 58px; }
+}
+.nb-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 900px) {
+  .nb-mobile-brand {
+    display: flex;
+  }
+}
+.nb-mobile-logo-img {
+    height: 60px;   /* adjust as needed */
+    width: auto;
+    object-fit: contain;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="nb-topbar">
+  <div class="nb-topbar-inner">
+
+    <!-- Brand -->
+    <div class="nb-brand">
+      <img src="static/achievers group of institutes.png" alt="Achievers Logo">
+      <div>
+        <div class="nb-brandname"><span>A</span>chievers Group of Institutes</div>
+        <div class="nb-tagline">Excellence in Education</div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="nb-contact-stack">
+      <div class="nb-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m2 7 10 7 10-7"/>
+        </svg>
+        achieversgroupofinstitutes@gmail.com
+      </div>
+      <div class="nb-contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/>
+        </svg>
+        8459360161 / 8999542174
+      </div>
+    </div>
+
+    <!-- Socials -->
+    <div class="nb-socials">
+      <a href="#" class="nb-social-btn">f</a>
+      <a href="#" class="nb-social-btn">in</a>
+      <a href="#" class="nb-social-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.736l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MAIN NAVBAR ===== -->
+<nav class="nb-nav" id="mainNav">
+  <div class="nb-nav-inner">
+
+<a class="nb-mobile-brand" href="/">
+  <img src="static/achievers group of institutes.png" alt="Achievers Logo" class="nb-mobile-logo-img">
+</a>
+
+    <!-- Desktop menu -->
+    <ul class="nb-menu" id="desktopMenu">
+      <li class="nb-item">
+        <a class="nb-link" href="/">Home</a>
+      </li>
+      <li class="nb-item">
+        <a class="nb-link" href="/achieversworldschool.html">About</a>
+      </li>
+   <!--<li class="nb-item" id="ddAbout">-->
+   <!--     <button class="nb-link" type="button">-->
+   <!--       About-->
+   <!--       <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">-->
+   <!--         <path d="m6 9 6 6 6-6"/>-->
+   <!--       </svg>-->
+   <!--     </button>-->
+   <!--     <div class="nb-dropdown">-->
+   <!--        <a class="nb-dd-item" href="/achieversworldschool.html">ACHIEVERS WORLD SCHOOL</a>-->
+   <!--         <a class="nb-dd-item" href="/achieversiit&medical.html">Achievers IIT & Medical</a>-->
+   <!--       <a class="nb-dd-item" href="/wisdominternationalschool.html">Wisdom International School</a>-->
+        
+   <!--     </div>-->
+   <!--   </li>-->
+      <!-- Results dropdown -->
+      <li class="nb-item" id="ddResult">
+        <button class="nb-link" type="button">
+          Results
+          <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nb-dropdown">
+          <div class="nb-dd-label">Examination Results</div>
+           <a class="nb-dd-item" href="/cet-result.html">🎯 CET Results</a>
+            <a class="nb-dd-item" href="/neet-result.html">🎯 NEET Results</a>
+          <a class="nb-dd-item" href="/jee-result.html">🎯 JEE Results</a>
+          <a class="nb-dd-item" href="/hsc-result.html">📋 11th–12th Results</a>
+        </div>
+      </li>
+
+      <!-- Courses dropdown -->
+      <li class="nb-item" id="ddCourses">
+        <button class="nb-link" type="button">
+          Courses
+          <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nb-dropdown" style="min-width:240px;">
+          <div class="nb-dd-label">Class 11th</div>
+          <a class="nb-dd-item" href="/11th-CET.html">🔬 11th CET</a>
+          <a class="nb-dd-item" href="/11th-JEE.html">⚛️ 11th JEE</a>
+          <a class="nb-dd-item" href="/11th-NEET.html">🧬 11th NEET</a>
+          <div class="nb-dd-sep"></div>
+          <div class="nb-dd-label">Class 12th</div>
+          <a class="nb-dd-item" href="/12th-CET.html">🔬 12th CET</a>
+          <a class="nb-dd-item" href="/12th-JEE.html">⚛️ 12th JEE</a>
+          <a class="nb-dd-item" href="/12th-NEET.html">🧬 12th NEET</a>
+        </div>
+      </li>
+
+      <li class="nb-item">
+        <a class="nb-link" href="/gallery.html">Gallery</a>
+      </li>
+        <li class="nb-item">
+        <a class="nb-link" href="/admission.html">Admission</a>
+      </li>
+      <li class="nb-item">
+        <a class="nb-link" href="/contact.html">Contact</a>
+      </li>
+    </ul>
+
+    <!-- CTA -->
+    <button class="nb-cta" onclick="window.location.href='/contact.html'">
+      <span class="nb-cta-star">✦</span> Get In Touch
+    </button>
+
+    <!-- Hamburger -->
+    <button class="nb-toggle" id="hamburger" type="button" aria-label="Toggle menu">
+      <span class="nb-bar"></span>
+      <span class="nb-bar"></span>
+      <span class="nb-bar"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="nb-drawer" id="mobileDrawer">
+    <a class="nb-link" href="/">Home</a>
+    <a class="nb-link" href="/achieversworldschool.html">About</a>
+ 
+        <!--  <button class="nb-link" type="button" id="mobileAboutBtn">-->
+        <!--  About-->
+        <!--  <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">-->
+        <!--    <path d="m6 9 6 6 6-6"/>-->
+        <!--  </svg>-->
+        <!--</button>-->
+        <!--<div class="nb-drawer-sub"  id="subAbout">-->
+        <!--   <a class="nb-dd-item" href="/achieversworldschool.html">ACHIEVERS WORLD SCHOOL</a>-->
+        <!--    <a class="nb-dd-item" href="/achieversiit&medical.html">Achievers IIT & Medical</a>-->
+        <!--  <a class="nb-dd-item" href="/wisdominternationalschool.html">Wisdom International School</a>-->
+        
+        <!--</div>-->
+     
+    <!-- Results accordion -->
+    <button class="nb-link" type="button" id="mobileResultBtn">
+  Results
+  <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;">
+    <path d="m6 9 6 6 6-6"/>
+  </svg>
+</button>
+
+<div class="nb-drawer-sub" id="subResult">  <!-- ✅ FIX HERE -->
+  <div class="nb-dd-label">Examination Results</div>
+
+  <a class="nb-dd-item" href="/cet-result.html">🎯 CET Results</a>
+  <a class="nb-dd-item" href="/neet-result.html">🎯 NEET Results</a>
+  <a class="nb-dd-item" href="/jee-result.html">🎯 JEE Results</a>
+  <a class="nb-dd-item" href="/hsc-result.html">📋 11th–12th Results</a>
+</div>
+    <!-- Courses accordion -->
+    <button class="nb-link" type="button" id="mobileCourseBtn">
+      Courses
+      <svg class="nb-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+     <div class="nb-drawer-sub" id="subCourses" style="min-width:240px;">
+          <div class="nb-dd-label">Class 11th</div>
+          <a class="nb-dd-item" href="/11th-CET.html">🔬 11th CET</a>
+          <a class="nb-dd-item" href="/11th-JEE.html">⚛️ 11th JEE</a>
+          <a class="nb-dd-item" href="/11th-NEET.html">🧬 11th NEET</a>
+          <div class="nb-dd-sep"></div>
+          <div class="nb-dd-label">Class 12th</div>
+          <a class="nb-dd-item" href="/12th-CET.html">🔬 12th CET</a>
+          <a class="nb-dd-item" href="/12th-JEE.html">⚛️ 12th JEE</a>
+          <a class="nb-dd-item" href="/12th-NEET.html">🧬 12th NEET</a>
+        </div>
+
+    <a class="nb-link" href="/gallery.html">Gallery</a>
+
+        <a class="nb-link" href="/admission.html">Admission</a>
+   
+    <a class="nb-link" href="/contact.html">Contact</a>
+
+    <button class="nb-drawer-cta" onclick="window.location.href='/contact.html'">
+      <span class="nb-cta-star">✦</span> Get In Touch
+    </button>
+  </div>
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ================= ACTIVE LINK ================= */
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nb-link[href]").forEach(link => {
+    const href = link.getAttribute("href").split("/").pop();
+
+    if (href === currentPage) {
+      link.classList.add("active");
+      
+    }
+  });
+
+
+  /* ================= DROPDOWN ================= */
+  const items = document.querySelectorAll(".nb-item");
+
+  items.forEach(item => {
+    const btn = item.querySelector("button.nb-link");
+    if (!btn) return;
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      items.forEach(i => {
+        if (i !== item) i.classList.remove("open");
+      });
+
+      item.classList.toggle("open");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nb-nav")) {
+      items.forEach(i => i.classList.remove("open"));
+    }
+  });
+
+
+  /* ================= MOBILE TOGGLE ================= */
+  const hamburger = document.getElementById("hamburger");
+  const drawer = document.getElementById("mobileDrawer");
+
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("is-open");
+    drawer.classList.toggle("open");
+  });
+
+
+  /* ================= MOBILE ACCORDION ================= */
+  function setup(btnId, subId) {
+    const btn = document.getElementById(btnId);
+    const sub = document.getElementById(subId);
+
+    btn.addEventListener("click", function () {
+      sub.classList.toggle("open");
+    });
+  }
+  setup("mobileAboutBtn", "subAbout");
+  setup("mobileResultBtn", "subResult");
+  setup("mobileCourseBtn", "subCourses");
+
+});
+</script>
+
+</body>
+</html>

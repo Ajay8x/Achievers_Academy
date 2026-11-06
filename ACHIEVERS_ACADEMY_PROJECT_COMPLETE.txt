@@ -7,34 +7,55 @@ Reference Live Website: https://achieversedugroup.com/
 Local Server Address:   http://localhost:3000
 
 --------------------------------------------------------------------------------
-SECTION 1: ALL WEBSITE PAGES (CLICKABLE / COPYABLE URLS)
+SECTION 1: ALL WEBSITE PAGES (WITH DEDICATED SEO METADATA & SCHEMA.ORG)
 --------------------------------------------------------------------------------
 
 1. Main Institutional Pages:
    • Homepage (Hero, Campuses, Highlights, Results, CTA):
      http://localhost:3000/
+     SEO Title: Achievers Academy - Excellence in Education | Manmad, Chandwad, Niphad
+     Schema: EducationalOrganization JSON-LD
+
    • About Us (Legacy, Vision, Mission, Leadership):
      http://localhost:3000/about
+     SEO Title: About Us | Institutional Vision, Mission & Leadership | Achievers Group
+
    • Academic Results & 100% HSC Toppers:
      http://localhost:3000/results
+     SEO Title: Academic Results & Board Toppers | 100% HSC Success, JEE & NEET Qualifiers
+
    • Institutional Accreditations (CBSE, State Board, MSBTE, PCI):
      http://localhost:3000/accreditations
+     SEO Title: Accreditations & Affiliations | CBSE, State Board, MSBTE & PCI
+
    • Admission Process & Online Registration Form:
      http://localhost:3000/admission
+     SEO Title: Admission 2025-2026 | Online Application Form & Procedure
+
    • Campus Photo Gallery (Filterable Lightbox):
      http://localhost:3000/gallery
+     SEO Title: Campus Photo Gallery | Infrastructure, Labs & Classrooms
+
    • Contact Us (Campus Addresses, Google Maps, Phone Helplines):
      http://localhost:3000/contact
+     SEO Title: Contact Us & Campus Directions | Phone, Email & Maps
 
 2. Campus Specific Pages:
    • Campuses Comparative Overview:
      http://localhost:3000/campuses
+     SEO Title: Our Campuses | Manmad, Chandwad & Niphad
+
    • Branch 01: Achievers World School (Manmad):
      http://localhost:3000/campuses/achievers-world-school-manmad
+     SEO Title: Achievers World School Manmad | Nursery to 10th CBSE Curriculum
+
    • Branch 02: Achievers IIT & Medical (Chandwad):
      http://localhost:3000/campuses/achievers-iit-medical-chandwad
+     SEO Title: Achievers IIT & Medical Chandwad | 11th & 12th Science, JEE, NEET & Hostels
+
    • Branch 03: Wisdom International School (Niphad):
      http://localhost:3000/campuses/wisdom-international-school-niphad
+     SEO Title: Wisdom International School Niphad | CBSE Affiliated Schooling & Sports
 
 3. Academic Programs Pages:
    • All Programs Overview:
@@ -51,10 +72,12 @@ SECTION 1: ALL WEBSITE PAGES (CLICKABLE / COPYABLE URLS)
 4. Institutional Facilities Pages:
    • Residential Hostel & Mess Facilities:
      http://localhost:3000/facilities/hostel
+     SEO Title: Residential Hostels & Mess Facilities | Boys & Girls Wings
    • Transportation Fleet (GPS Tracked School Buses):
      http://localhost:3000/facilities/transport
+     SEO Title: School Bus & Transportation Fleet | GPS Tracked & CCTV Secured
 
-5. SEO & Search Engine Links:
+5. Search Engine Discovery & Indexing:
    • Dynamic XML Sitemap:
      http://localhost:3000/sitemap.xml
    • Search Engine Robots Configuration:
@@ -128,58 +151,90 @@ SECTION 5: BACKEND REST API ENDPOINTS
 
 1. Submit Admission Enquiry (Public):
    POST http://localhost:3000/api/admission
-   Body: JSON { studentName, parentName, phone, email, campus, program, hostelRequired, transportRequired, message }
-
 2. List Admission Enquiries (Protected Admin):
    GET  http://localhost:3000/api/admission?campus=all&status=all&search=
-
 3. Export Enquiries to CSV (Protected Admin):
    GET  http://localhost:3000/api/admission?format=csv
-
 4. Admin Authentication (Login):
    POST http://localhost:3000/api/admin/auth
-   Body: JSON { username: "admin@achieversacademy.com", password: "Achievers@2025" }
-
 5. Admin Session Check:
    GET  http://localhost:3000/api/admin/auth
-
 6. Admin Sign Out:
    DELETE http://localhost:3000/api/admin/auth
-
 7. Update Enquiry Status & Counselor Notes:
    PATCH http://localhost:3000/api/admin/enquiries/[id]
-   Body: JSON { status: "Contacted", notes: "Called parent, visit scheduled" }
-
 8. Delete Enquiry:
    DELETE http://localhost:3000/api/admin/enquiries/[id]
-
 9. AI Virtual Admission Counselor Endpoint:
    POST http://localhost:3000/api/chat
-   Body: JSON { message: "Hostel me khana aur rehna kaisa hai?" }
-   Features: Multilingual (English, Hindi, Hinglish), Automatic Phone Lead Capture
-
 10. Chatbot Knowledge Base Management:
     GET / POST / DELETE http://localhost:3000/api/admin/kb
-
---------------------------------------------------------------------------------
-SECTION 6: HOW TO RUN & DEPLOY
---------------------------------------------------------------------------------
-
-Start Development Server:
-  npm run dev
-
-Build for Production:
-  npm run build
-
-Run Production Server:
-  npm start
-
-Persistent Database File:
-  data/achievers_db.json
-
-Downloaded Institutional Media:
-  public/images/ (27 authentic photos from achieversedugroup.com)
 
 ================================================================================
 END OF MASTER LINK DIRECTORY
 ================================================================================
+
+
+================================================================================
+UPDATED HOMEPAGE SECTION STRUCTURE (MATCHING REFERENCE SITE FLOW)
+================================================================================
+1. Hero Banner: Wide sun-kissed campus architecture with student life view
+2. Nurturing Rural Education: Mission description + 3 stat boxes (18000+ Students, 200+ Faculty, 15+ Years) + Read More button + Classical Portico image
+3. What You Want to Explore Our Institutes: 3 side-by-side Campus cards (Manmad, Chandwad, Niphad)
+4. Explore Our Residential Facilities: Deep Navy (#0B1E3D) section with Bus Facility & Hostel Facility dark cards, checkmarks, and orange Explore More buttons
+5. Explore Our Learning Ecosystem: 3 Stage cards (Primary, Primary to Secondary, Higher Secondary) + 4 Quick visual cards (Campus Infrastructure, Accreditations, Results, Admission Open)
+6. Accreditations & Recognition: 4 Apex Board Logos (CBSE, Maharashtra State Board, MSBTE, PCI)
+7. From Vision to Victory: 100% Exam Success: Milestone Banner + 4 Uncropped Topper Cards
+8. What our students say: Student portrait in grey polo shirt (Left) + Interactive Testimonial Quote Slider (Right)
+9. Admission Enquiry CTA: Direct Helpline (+91 8459360161) & WhatsApp CTA
+
+
+================================================================================
+UPDATED FOOTER DESIGN (MATCHING USER SCREENSHOT EXACTLY)
+================================================================================
+1. Branch 01: Hexagonal Achievers World School Logo + Branch 01 badge + Address with amber pin + View on Map button
+2. Branch 02: Hexagonal Achievers Group Logo + Branch 02 badge + Address with amber pin + View on Map button
+3. Branch 03: Highlighted Navy Card + Circular Wisdom International School Logo + Branch 03 badge + Address + View on Map button
+4. Quick Links: Golden underline + Arrow bullet links (Home, About Us, Accreditations, Admissions, Gallery, Contact Us, Privacy Policy)
+5. Get In Touch: Golden underline + Phone Card (8385853131 / 8999542174) + Email Card (achieversgroupofinstitutes@gmail.com)
+6. FOLLOW US: 4 Branded Social Buttons (Facebook, Instagram gradient, YouTube red, Twitter/X blue)
+
+
+================================================================================
+UPDATED TESTIMONIALS (EXACTLY 3 STUDENTS & AUTO-SLIDING)
+================================================================================
+1. Number of Testimonials: Exactly 3 students (1/3, 2/3, 3/3) matching the 3 official student photos
+2. Student 1: Rohan More (static_result_student1.jpg - JEE Advanced 99.12 %ile)
+3. Student 2: Pooja Kulkarni (static_result_student5.jpg - NEET UG 635/720)
+4. Student 3: Sahil Deshmukh (static_result_student7.jpg - MHT-CET 98.8 %ile)
+5. Auto-Slide: Automatically switches quote & photo every 4 seconds with smooth fade transition
+6. Manual Controls: Previous and Next arrows also allow manual browsing
+
+
+================================================================================
+UPDATED TOP NAVBAR LOGO
+================================================================================
+- Top Navigation Bar updated to use official hexagonal emblem: Achievers Group of Institutes (Est. 2011) at public/images/achievers_main_logo.png
+
+
+UPDATED ABOUT US PAGE (/about) - MATCHING USER SCREENSHOT EXACTLY
+1. Hero Banner: Warm sunrise amber-to-navy gradient
+2. Our Mission & Vision: 2 Side-by-side bordered cards
+3. Welcome to ACHIEVERS WORLD SCHOOL: Neoclassical campus photo + narrative
+4. Key Statistics: Deep Navy Blue Banner (15+ Years, 18000+ Enrolled, 100% Success, 5 Options)
+5. Meet Our Founder: Shri. Roshan Dilip Lokhande narrative + Quote Box
+
+
+OFFICIAL MHT-CET MERIT POSTER INTEGRATION
+- Image saved to public/images/static_result_CET.jpg
+- Title: आमचा निकाल.. आमचा अभिमान...! चला भविष्य घडवूया... MHT-CET RESULTS (The Education Times)
+- Integrated in Homepage (/): 4th Topper Card (MHT-CET Champions 98.5+ %ile)
+- Integrated in Results Page (/results): Dedicated Side-by-side Showcase alongside HSC Board poster with Full-screen Zoom Lightbox modal
+
+
+OFFICIAL NEET MEDICAL MERIT POSTER INTEGRATION
+- Image saved to public/images/static_result_NEET.jpg
+- Title: OUR GLANCE @ NEET EXAM (Admissions Open for NEET Regular/Crash & Repeater Batches)
+- Top MBBS Selections: Sakshi Shivle 643, Aadinath Pachorkar 631, Soham Gavali 605, Kanupriya Mate 604, etc.
+- Integrated in Homepage (/): 3rd Topper Card (Top MBBS Selections)
+- Integrated in Results Page (/results): Featured in Top 3 Major Merit Posters Grid with Click-to-Zoom Fullscreen Lightbox

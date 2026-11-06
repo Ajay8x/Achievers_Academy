@@ -22,7 +22,7 @@ const config: Config = {
           700: '#2b50bf',
           800: '#26429c',
           900: '#0F2B71', // Brand Navy
-          950: '#0A1C4A', // Deep Midnight Navy
+          950: '#071536', // Deep Midnight Navy
         },
         gold: {
           50: '#fffbeb',
@@ -39,11 +39,11 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['Georgia', 'Cambria', 'serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out forwards',
-        'slide-up': 'slideUp 0.6s ease-out forwards',
+        'fade-in': 'fadeIn 0.4s ease-out forwards',
+        'slide-up': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
       },
       keyframes: {
@@ -52,14 +52,18 @@ const config: Config = {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         pulseSubtle: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%': { transform: 'scale(1.03)', opacity: '0.95' },
+          '50%': { transform: 'scale(1.02)', opacity: '0.96' },
         },
       },
+      boxShadow: {
+        'premium': '0 20px 40px -15px rgba(15, 43, 113, 0.12), 0 0 1px 1px rgba(15, 43, 113, 0.05)',
+        'gold-sm': '0 4px 20px -2px rgba(217, 119, 6, 0.25)',
+      }
     },
   },
   plugins: [],

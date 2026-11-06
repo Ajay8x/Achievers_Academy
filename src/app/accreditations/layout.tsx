@@ -9,3 +9,4 @@ export const metadata: Metadata = {
 export default function AccreditationsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
+

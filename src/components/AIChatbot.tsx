@@ -224,15 +224,15 @@ export default function AIChatbot() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="AI Admission Assistant"
-          className="group relative flex items-center gap-2.5 px-4 py-3 bg-navy-900 hover:bg-navy-950 text-white font-semibold rounded-full shadow-2xl border border-navy-700/60 transition-all duration-300 transform hover:scale-105 active:scale-95"
+          className="group relative flex items-center gap-2 p-3 sm:px-4 sm:py-3 bg-navy-950 hover:bg-navy-900 text-white font-semibold rounded-full shadow-2xl border border-navy-700/60 transition-all duration-300 transform hover:scale-105 active:scale-95"
         >
           <div className="relative">
             <Bot className="w-5 h-5 text-gold-400 group-hover:rotate-12 transition-transform duration-300" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold-400 rounded-full animate-ping"></span>
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold-400 rounded-full"></span>
           </div>
-          <span className="text-xs font-bold tracking-wide">
-            AI Admission Assistant
+          <span className="hidden sm:inline-block text-xs font-bold tracking-wide">
+            AI Counselor
           </span>
         </button>
       </div>

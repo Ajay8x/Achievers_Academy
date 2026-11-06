@@ -52,11 +52,11 @@ export default function ResultsPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
+            <div className="lg:col-span-4 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white/10 p-2 flex items-center justify-center">
               <img
                 src="/images/static_result_HSC.jpeg"
                 alt="HSC Science Board Results"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-contain rounded-xl"
               />
             </div>
           </div>
@@ -72,12 +72,12 @@ export default function ResultsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* JEE */}
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center group hover:shadow-lg transition">
-                <div className="h-56 rounded-2xl overflow-hidden bg-navy-100 mb-4">
+              <div className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm">
+                <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
                     src="/images/static_result_student1.jpg"
                     alt="JEE Achievers"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-navy-100 text-navy-900 px-3 py-1 rounded-full">
@@ -90,12 +90,12 @@ export default function ResultsPage() {
               </div>
 
               {/* NEET */}
-              <div className="p-6 rounded-3xl bg-slate-50 border-2 border-gold-400/40 text-center group hover:shadow-lg transition">
-                <div className="h-56 rounded-2xl overflow-hidden bg-navy-100 mb-4">
+              <div className="p-6 rounded-3xl bg-white border-2 border-gold-400/50 text-center group hover:shadow-lg transition shadow-sm">
+                <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
                     src="/images/static_result_student5.jpg"
                     alt="NEET Achievers"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">
@@ -108,12 +108,12 @@ export default function ResultsPage() {
               </div>
 
               {/* MHT-CET */}
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center group hover:shadow-lg transition">
-                <div className="h-56 rounded-2xl overflow-hidden bg-navy-100 mb-4">
+              <div className="p-6 rounded-3xl bg-white border border-slate-200 text-center group hover:shadow-lg transition shadow-sm">
+                <div className="h-72 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 p-2 flex items-center justify-center mb-4">
                   <img
                     src="/images/static_result_student7.jpg"
                     alt="MHT CET Achievers"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-3 py-1 rounded-full">

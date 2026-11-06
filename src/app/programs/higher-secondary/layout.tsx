@@ -9,3 +9,4 @@ export const metadata: Metadata = {
 export default function HigherSecondaryLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
+

@@ -37,23 +37,23 @@ export default function Navbar() {
         {/* =========================================================================
             TOP NAV BAR: Brand Logo + Identity + Helplines + Socials
            ========================================================================= */}
-        <div className="bg-[#0B1E3D] text-slate-200 py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-900">
+        <div className="bg-[#0B1E3D] text-slate-200 py-2 sm:py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-900">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
             
             {/* Top Left: Hexagonal Logo + Academy Title */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center p-0.5 bg-white/10 rounded-xl border border-white/15 shadow-sm group-hover:scale-105 transition-transform">
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-[58px] md:h-[58px] flex items-center justify-center p-1 bg-white/10 rounded-2xl border border-white/20 shadow-md group-hover:scale-105 transition-transform shrink-0">
                 <img
                   src="/images/achievers_main_logo.png"
                   alt="Achievers Group of Institutes"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain filter drop-shadow-sm"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold font-serif text-white tracking-wide leading-tight group-hover:text-amber-400 transition">
+                <span className="text-base sm:text-lg md:text-xl font-bold font-serif text-white tracking-wide leading-tight group-hover:text-amber-400 transition">
                   Achievers Group of Institutes
                 </span>
-                <span className="text-[10px] tracking-[0.2em] font-semibold text-slate-300 uppercase">
+                <span className="text-[10px] sm:text-[11px] tracking-[0.22em] font-semibold text-slate-300 uppercase mt-0.5">
                   EXCELLENCE IN EDUCATION
                 </span>
               </div>

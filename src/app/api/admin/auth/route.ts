@@ -4,10 +4,12 @@ import { signAdminToken, getCurrentAdmin, TOKEN_NAME, hashPassword } from '@/lib
 
 export async function POST(req: NextRequest) {
   try {
-    const { username, password } = await req.json();
+    const body = await req.json();
+    const username = body.username || body.email;
+    const password = body.password;
 
     if (!username || !password) {
-      return NextResponse.json({ error: 'Username and password required.' }, { status: 400 });
+      return NextResponse.json({ error: 'Username/Email and password required.' }, { status: 400 });
     }
 
     const hashed = hashPassword(password);
@@ -25,6 +27,7 @@ export async function POST(req: NextRequest) {
 
     const res = NextResponse.json({
       success: true,
+      token,
       message: 'Login successful'
     });
 

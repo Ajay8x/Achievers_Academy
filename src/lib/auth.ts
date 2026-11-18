@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import crypto from 'crypto';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'achievers-super-secure-token-2025-edu-group';
@@ -29,7 +29,20 @@ export function verifyAdminToken(token: string): AdminPayload | null {
 
 export async function getCurrentAdmin(): Promise<AdminPayload | null> {
   const cookieStore = cookies();
-  const token = cookieStore.get(TOKEN_NAME)?.value;
+  let token = cookieStore.get(TOKEN_NAME)?.value;
+
+  if (!token) {
+    try {
+      const headerList = headers();
+      const authHeader = headerList.get('authorization') || headerList.get('Authorization');
+      if (authHeader && authHeader.startsWith('Bearer ')) {
+        token = authHeader.substring(7);
+      }
+    } catch {
+      // headers() might not be available in certain contexts
+    }
+  }
+
   if (!token) return null;
   return verifyAdminToken(token);
 }

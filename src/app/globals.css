@@ -65,29 +65,29 @@ body {
   box-shadow: 0 20px 40px -15px rgba(15, 43, 113, 0.12), 0 0 1px 1px rgba(15, 43, 113, 0.05);
 }
 
-/* Pulsing Glowing Action Buttons */
+/* Soft & Classy Pulsing Glowing Action Buttons (Mild Glow) */
 @keyframes pulseGlowGold {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45), 0 10px 25px -5px rgba(245, 158, 11, 0.4), 0 0 20px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.25), 0 3px 12px rgba(245, 158, 11, 0.15);
   }
   50% {
-    box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.2), 0 15px 35px -5px rgba(245, 158, 11, 0.75), 0 0 35px rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.42), 0 5px 18px rgba(245, 158, 11, 0.25);
   }
 }
 
 @keyframes pulseGlowEmerald {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45), 0 10px 25px -5px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.25), 0 3px 12px rgba(16, 185, 129, 0.15);
   }
   50% {
-    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0.2), 0 15px 35px -5px rgba(16, 185, 129, 0.75), 0 0 35px rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.42), 0 5px 18px rgba(16, 185, 129, 0.25);
   }
 }
 
 .glow-gold-pulse {
-  animation: pulseGlowGold 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  animation: pulseGlowGold 3s infinite ease-in-out;
 }
 
 .glow-emerald-pulse {
-  animation: pulseGlowEmerald 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  animation: pulseGlowEmerald 3s infinite ease-in-out;
 }

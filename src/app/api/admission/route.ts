@@ -25,21 +25,19 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const {
-      studentName,
-      parentName,
-      phone,
-      email,
-      campus,
-      program,
-      batch,
-      hostelRequired,
-      transportRequired,
-      message,
-      relationship,
-      preferredMedium,
-      source
-    } = body;
+    const studentName = body.studentName || body.name;
+    const parentName = body.parentName || '';
+    const phone = body.phone || body.mobile || body.contact;
+    const email = body.email || '';
+    const campus = body.campus;
+    const program = body.program || body.grade || body.course;
+    const batch = body.batch || '';
+    const hostelRequired = !!body.hostelRequired;
+    const transportRequired = !!body.transportRequired;
+    const message = body.message || body.notes || '';
+    const relationship = body.relationship || 'Parent';
+    const preferredMedium = body.preferredMedium || 'English';
+    const source = body.source || 'Website Admission Form';
 
     // Validation
     if (!studentName || !phone || !campus || !program) {

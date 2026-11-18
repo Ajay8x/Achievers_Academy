@@ -94,9 +94,9 @@ export default function AIChatbot() {
   return (
     <>
       {/* Floating Trigger (Bottom-Left) */}
-      <div className="fixed bottom-6 left-6 z-40 flex flex-col items-start">
+      <div className="fixed bottom-5 left-5 z-40 flex flex-col items-start">
         {isOpen && (
-          <div className="mb-4 w-[92vw] sm:w-[410px] h-[550px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-navy-100 flex flex-col overflow-hidden animate-slide-up">
+          <div className="mb-3 w-[92vw] sm:w-[390px] h-[520px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-navy-100 flex flex-col overflow-hidden animate-slide-up">
             {/* Header */}
             <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white p-4 flex items-center justify-between border-b border-navy-700">
               <div className="flex items-center gap-3">
@@ -220,27 +220,21 @@ export default function AIChatbot() {
           </div>
         )}
 
-        {/* Trigger Button - Sleek, Compact Luxury Glowing Style */}
-        <div className="relative group">
-          {/* Subtle Ambient Glow */}
-          <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 blur-sm opacity-60 group-hover:opacity-90 transition duration-300"></div>
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="AI Admission Assistant"
-            className="relative flex items-center gap-2 px-3.5 py-2 bg-gradient-to-r from-[#07132B] via-[#0E275C] to-[#07132B] hover:from-[#0B1E3D] hover:to-[#0B1E3D] text-white rounded-full shadow-lg border border-amber-400/90 hover:border-amber-300 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-gold-pulse"
-          >
-            <div className="relative w-6 h-6 rounded-full bg-amber-400/20 border border-amber-400/60 flex items-center justify-center shrink-0">
-              <Bot className="w-3.5 h-3.5 text-amber-300 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-amber-400 rounded-full animate-ping"></span>
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-amber-400 rounded-full ring-1 ring-navy-950"></span>
-            </div>
-            <span className="text-xs sm:text-sm font-bold tracking-wide text-white drop-shadow-sm">
-              AI Counselor
-            </span>
-            <Sparkles className="w-3 h-3 text-amber-300 animate-pulse hidden sm:inline" />
-          </button>
-        </div>
+        {/* Trigger Button - Sleek, Compact Luxury with Mild Glow */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="AI Admission Assistant"
+          className="group relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[#07132B] via-[#0E275C] to-[#07132B] hover:from-[#0B1E3D] hover:to-[#0B1E3D] text-white rounded-full shadow-sm border border-amber-400/70 hover:border-amber-300 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-gold-pulse"
+        >
+          <div className="relative w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center shrink-0">
+            <Bot className="w-3 h-3 text-amber-300 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping"></span>
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full ring-1 ring-navy-950"></span>
+          </div>
+          <span className="text-xs font-bold tracking-wide text-white drop-shadow-sm">
+            AI Counselor
+          </span>
+        </button>
       </div>
     </>
   );

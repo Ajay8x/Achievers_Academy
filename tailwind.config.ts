@@ -38,8 +38,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
+        sans: ['"Times New Roman"', 'Times', 'Georgia', 'serif'],
+        serif: ['"Times New Roman"', 'Times', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.4s ease-out forwards',

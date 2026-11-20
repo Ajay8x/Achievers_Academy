@@ -105,9 +105,9 @@ export default function HomePage() {
           {/* Floating Admission Highlights on Hero */}
           <div className="absolute bottom-6 sm:bottom-12 left-0 right-0 z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-navy-950/85 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 text-white max-w-2xl shadow-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-semibold mb-3">
-                  <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+              <div className="bg-black/85 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 text-white max-w-2xl shadow-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-semibold mb-3">
+                  <Sparkles className="w-3.5 h-3.5 text-blue-300" />
                   <span>Admissions Open for Academic Year 2025-26</span>
                 </div>
                 <h1 className="text-2xl sm:text-4xl font-bold font-serif leading-tight text-white">
@@ -119,13 +119,13 @@ export default function HomePage() {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <button
                     onClick={() => openAdmission('Achievers World School (Manmad)')}
-                    className="px-5 py-2.5 bg-gradient-to-r from-gold-400 to-amber-500 hover:from-gold-300 hover:to-amber-400 text-navy-950 font-bold rounded-xl text-xs sm:text-sm shadow-md transition transform hover:-translate-y-0.5"
+                    className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5"
                   >
                     Apply for Admission 2025-26
                   </button>
                   <Link
                     href="/campuses"
-                    className="px-5 py-2.5 bg-white/15 hover:bg-white/25 border border-white/25 text-white font-semibold rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5"
+                    className="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5"
                   >
                     <span>Explore Campuses</span>
                     <ArrowRight className="w-3.5 h-3.5" />

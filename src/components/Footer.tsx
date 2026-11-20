@@ -11,10 +11,10 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B1E3D] text-slate-200 pt-16 pb-8 border-t-2 border-amber-400/40 relative overflow-hidden">
+    <footer className="bg-[#070E1E] text-slate-200 pt-16 pb-8 border-t-2 border-blue-600/50 relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -194,26 +194,26 @@ export default function Footer() {
           </div>
 
 
-          {/* ==================== GET IN TOUCH ==================== */}
+          {/* ==================== CONTACT & ADMISSIONS ==================== */}
           <div className="lg:col-span-3 space-y-3">
             <div>
               <h4 className="text-base font-bold text-white font-serif tracking-wide">
-                Get In Touch
+                Contact &amp; Admissions
               </h4>
-              <div className="w-8 h-1 bg-amber-400 rounded-full mt-1.5"></div>
+              <div className="w-8 h-1 bg-blue-500 rounded-full mt-1.5"></div>
             </div>
 
             <div className="space-y-3 pt-1">
               {/* Phone Card */}
-              <div className="p-3 rounded-2xl bg-navy-900/90 border border-white/10 flex items-center gap-3 shadow-sm hover:border-amber-400/40 transition">
-                <div className="w-9 h-9 rounded-xl bg-amber-400 text-navy-950 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 fill-navy-950 text-amber-400" />
+              <div className="p-3 rounded-2xl bg-navy-900/90 border border-white/10 flex items-center gap-3 shadow-sm hover:border-blue-400/40 transition">
+                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+                  <Phone className="w-4 h-4 text-white" />
                 </div>
                 <div className="min-w-0">
                   <span className="text-[11px] font-bold text-white block">Phone</span>
                   <a 
                     href="tel:8385853131" 
-                    className="text-xs text-slate-300 hover:text-amber-400 transition block truncate"
+                    className="text-xs text-slate-300 hover:text-blue-400 transition block truncate"
                   >
                     8385853131 / 8999542174
                   </a>
@@ -221,15 +221,15 @@ export default function Footer() {
               </div>
 
               {/* Email Card */}
-              <div className="p-3 rounded-2xl bg-navy-900/90 border border-white/10 flex items-center gap-3 shadow-sm hover:border-amber-400/40 transition">
-                <div className="w-9 h-9 rounded-xl bg-amber-400 text-navy-950 flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-navy-950" />
+              <div className="p-3 rounded-2xl bg-navy-900/90 border border-white/10 flex items-center gap-3 shadow-sm hover:border-blue-400/40 transition">
+                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4 text-white" />
                 </div>
                 <div className="min-w-0">
                   <span className="text-[11px] font-bold text-white block">Email</span>
                   <a 
                     href="mailto:achieversgroupofinstitutes@gmail.com" 
-                    className="text-xs text-slate-300 hover:text-amber-400 transition block truncate"
+                    className="text-xs text-slate-300 hover:text-blue-400 transition block truncate"
                     title="achieversgroupofinstitutes@gmail.com"
                   >
                     achieversgroupofinstitutes@gmail.com

@@ -12,10 +12,14 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Times New Roman', Times, Georgia, serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
 }
 
 /* Custom Scrollbar */
@@ -66,6 +70,15 @@ body {
 }
 
 /* Soft & Classy Pulsing Glowing Action Buttons (Mild Glow) */
+@keyframes pulseGlowBlue {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.28), 0 3px 12px rgba(37, 99, 235, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.48), 0 5px 20px rgba(37, 99, 235, 0.28);
+  }
+}
+
 @keyframes pulseGlowGold {
   0%, 100% {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.25), 0 3px 12px rgba(245, 158, 11, 0.15);
@@ -82,6 +95,10 @@ body {
   50% {
     box-shadow: 0 0 16px rgba(16, 185, 129, 0.42), 0 5px 18px rgba(16, 185, 129, 0.25);
   }
+}
+
+.glow-blue-pulse {
+  animation: pulseGlowBlue 3s infinite ease-in-out;
 }
 
 .glow-gold-pulse {

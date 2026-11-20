@@ -35,9 +35,9 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 w-full shadow-md bg-white">
         
         {/* =========================================================================
-            TOP NAV BAR: Brand Logo + Identity + Helplines + Socials
+            TOP NAV BAR: Brand Logo + Identity + Helplines + Socials (Blue, Black, White)
            ========================================================================= */}
-        <div className="bg-[#0B1E3D] text-slate-200 py-2 sm:py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-900">
+        <div className="bg-[#070E1E] text-slate-200 py-2 sm:py-2.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
             
             {/* Top Left: Hexagonal Logo + Academy Title */}
@@ -50,7 +50,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm sm:text-base md:text-lg font-bold font-serif text-white tracking-wide leading-tight group-hover:text-amber-400 transition">
+                <span className="text-sm sm:text-base md:text-lg font-bold font-serif text-white tracking-wide leading-tight group-hover:text-blue-400 transition">
                   Achievers Group of Institutes
                 </span>
                 <span className="text-[9px] sm:text-[10px] tracking-[0.2em] font-semibold text-slate-300 uppercase mt-0.5">
@@ -64,18 +64,18 @@ export default function Navbar() {
               {/* Email */}
               <a 
                 href="mailto:achieversgroupofinstitutes@gmail.com" 
-                className="hidden lg:flex items-center gap-1.5 hover:text-amber-400 transition"
+                className="hidden lg:flex items-center gap-1.5 hover:text-blue-400 transition"
               >
-                <Mail className="w-3.5 h-3.5 text-amber-400" />
+                <Mail className="w-3.5 h-3.5 text-blue-400" />
                 <span className="text-xs">achieversgroupofinstitutes@gmail.com</span>
               </a>
 
               {/* Phone */}
               <a 
                 href="tel:8459360161" 
-                className="flex items-center gap-1.5 hover:text-amber-400 transition"
+                className="flex items-center gap-1.5 hover:text-blue-400 transition"
               >
-                <Phone className="w-3.5 h-3.5 text-amber-400" />
+                <Phone className="w-3.5 h-3.5 text-blue-400" />
                 <span className="font-semibold text-white">8459360161</span>
                 <span>/</span>
                 <span className="text-slate-300">8999542174</span>
@@ -146,7 +146,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={`py-1 transition ${
-                  isActive('/') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  isActive('/') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'hover:text-blue-600'
                 }`}
               >
                 Home
@@ -156,7 +156,7 @@ export default function Navbar() {
               <Link
                 href="/about"
                 className={`py-1 transition ${
-                  isActive('/about') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  isActive('/about') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'hover:text-blue-600'
                 }`}
               >
                 About
@@ -321,7 +321,7 @@ export default function Navbar() {
               <Link
                 href="/gallery"
                 className={`py-1 transition ${
-                  isActive('/gallery') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  isActive('/gallery') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'hover:text-blue-600'
                 }`}
               >
                 Gallery
@@ -331,7 +331,7 @@ export default function Navbar() {
               <Link
                 href="/admission"
                 className={`py-1 transition ${
-                  isActive('/admission') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  isActive('/admission') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'hover:text-blue-600'
                 }`}
               >
                 Admission
@@ -341,7 +341,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className={`py-1 transition ${
-                  isActive('/contact') ? 'text-amber-600 font-bold border-b-2 border-amber-500' : 'hover:text-navy-950'
+                  isActive('/contact') ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'hover:text-blue-600'
                 }`}
               >
                 Contact
@@ -349,14 +349,14 @@ export default function Navbar() {
 
             </nav>
 
-            {/* Right Action: "✦ Get In Touch" Button */}
+            {/* Right Action: "Apply Now" CTA Button (Blue, Black, White) */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-5 py-2.5 bg-[#0B1E3D] hover:bg-navy-900 text-white font-bold rounded-xl text-xs sm:text-sm shadow-sm transition flex items-center gap-1.5 group transform hover:-translate-y-0.5"
+                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-blue-600/30 transition flex items-center gap-1.5 group transform hover:-translate-y-0.5"
               >
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform" />
-                <span>Get In Touch</span>
+                <Sparkles className="w-3.5 h-3.5 text-blue-200 group-hover:rotate-12 transition-transform" />
+                <span>Apply Now</span>
               </button>
 
               {/* Mobile Menu Toggle Button */}
@@ -472,10 +472,10 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   setIsModalOpen(true);
                 }}
-                className="w-full py-3 bg-[#0B1E3D] text-white font-bold rounded-xl text-center flex items-center justify-center gap-2"
+                className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-center flex items-center justify-center gap-2 shadow-md shadow-blue-600/30"
               >
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Get In Touch</span>
+                <Sparkles className="w-4 h-4 text-blue-200" />
+                <span>Apply Now</span>
               </button>
             </div>
           </div>

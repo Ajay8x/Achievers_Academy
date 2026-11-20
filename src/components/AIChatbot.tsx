@@ -220,16 +220,16 @@ export default function AIChatbot() {
           </div>
         )}
 
-        {/* Trigger Button - Sleek, Compact Luxury with Mild Glow */}
+        {/* Trigger Button - Blue, Black, White Luxury with Mild Glow */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="AI Admission Assistant"
-          className="group relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[#07132B] via-[#0E275C] to-[#07132B] hover:from-[#0B1E3D] hover:to-[#0B1E3D] text-white rounded-full shadow-sm border border-amber-400/70 hover:border-amber-300 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-gold-pulse"
+          className="group relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-black via-[#0B1B3D] to-black hover:from-slate-950 hover:to-slate-950 text-white rounded-full shadow-sm border border-blue-400/80 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-blue-pulse"
         >
-          <div className="relative w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center shrink-0">
-            <Bot className="w-3 h-3 text-amber-300 group-hover:rotate-12 transition-transform duration-300" />
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping"></span>
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full ring-1 ring-navy-950"></span>
+          <div className="relative w-5 h-5 rounded-full bg-blue-500/20 border border-blue-400/60 flex items-center justify-center shrink-0">
+            <Bot className="w-3 h-3 text-blue-300 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping"></span>
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full ring-1 ring-black"></span>
           </div>
           <span className="text-xs font-bold tracking-wide text-white drop-shadow-sm">
             AI Counselor

@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Detect language style (Hindi / Hinglish vs English)
-    const isHindiOrHinglish = /(kaha|kahan|kaise|kitna|fees|paisa|admission|milega|hoga|chahiye|padhai|shiksha|batao|kare|hai|h|namaste|pranam)/i.test(lowerQuery);
+    const isHindiOrHinglish = /\b(kaha|kahan|kaise|kitna|kitni|paisa|paise|milega|milegi|hoga|hogi|chahiye|padhai|shiksha|batao|bataiye|kare|karna|hai|hein|namaste|pranam|dakhila)\b/i.test(lowerQuery) || /[\u0900-\u097F]/.test(message);
 
     // Specific greetings
     if (/^(hi|hello|hey|namaste|pranam|good morning|good afternoon|good evening|kya haal)/i.test(lowerQuery) && lowerQuery.length < 20) {

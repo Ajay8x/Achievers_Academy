@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdminSidebar from '@/components/AdminSidebar';
+import { useToast } from '@/context/ToastContext';
 import { 
   Users, 
   Search, 
@@ -42,6 +43,7 @@ interface AdmissionEnquiry {
 
 export default function AdminEnquiriesPage() {
   const router = useRouter();
+  const { showError, showSuccess } = useToast();
   const [enquiries, setEnquiries] = useState<AdmissionEnquiry[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -103,9 +105,13 @@ export default function AdminEnquiriesPage() {
           )
         );
         setSelectedEnquiry(null);
+        showSuccess('Enquiry status and counselor notes updated successfully.', 'Record Updated');
+      } else {
+        showError('Failed to update enquiry status.', 'Update Error');
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      showError(err.message || 'Error updating enquiry record.', 'Update Error');
     } finally {
       setUpdating(false);
     }
@@ -118,9 +124,13 @@ export default function AdminEnquiriesPage() {
       const res = await fetch(`/api/admin/enquiries/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setEnquiries(prev => prev.filter(e => e.id !== id));
+        showSuccess('Enquiry record deleted successfully.', 'Deleted');
+      } else {
+        showError('Failed to delete enquiry record.', 'Delete Error');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      showError(e.message || 'Error deleting enquiry record.', 'Delete Error');
     }
   };
 

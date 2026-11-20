@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloating from "@/components/WhatsAppFloating";
 import AIChatbot from "@/components/AIChatbot";
+import { ToastProvider } from "@/context/ToastContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://achieversedugroup.com"),
@@ -134,11 +135,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-gold-500 selection:text-navy-950">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFloating />
-        <AIChatbot />
+        <ToastProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppFloating />
+          <AIChatbot />
+        </ToastProvider>
       </body>
     </html>
   );

@@ -237,7 +237,7 @@ export default function HomePage() {
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-navy-950">
-              What You Want to <span className="italic text-amber-600 font-serif">Explore Our Institutes</span>
+              What You Want to <span className="italic text-blue-600 font-serif">Explore Our Institutes</span>
             </h2>
             <p className="text-slate-600 mt-3 text-sm sm:text-base">
               Choose the institute you are interested in and discover the world-class educational experience we offer across Nashik district.
@@ -247,7 +247,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Campus Card 1: Manmad */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between group">
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
@@ -256,7 +256,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500 text-white shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-600 text-white shadow-sm uppercase tracking-wider">
                       CBSE Pattern
                     </span>
                   </div>
@@ -266,11 +266,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-amber-600 transition">
+                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-blue-600 transition">
                     Achievers World School – Manmad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <span>Shrinath Dream City, Umrane Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -282,7 +282,7 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/achievers-world-school-manmad"
-                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-amber-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
                 >
                   <span>Explore Campus</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -291,7 +291,7 @@ export default function HomePage() {
             </div>
 
             {/* Campus Card 2: Chandwad */}
-            <div className="bg-white rounded-3xl overflow-hidden border-2 border-amber-400/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border-2 border-blue-600/40 shadow-md flex flex-col justify-between group">
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
@@ -300,7 +300,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-navy-950 text-gold-400 shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-900 text-white shadow-sm uppercase tracking-wider">
                       IIT-JEE / NEET
                     </span>
                   </div>
@@ -310,11 +310,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-amber-600 transition">
+                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-blue-600 transition">
                     Achievers IIT &amp; Medical – Chandwad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <span>Opp. Indian Oil Petrol Pump, Manmad Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -326,7 +326,7 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/achievers-iit-medical-chandwad"
-                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-amber-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
                 >
                   <span>Explore Campus</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -335,7 +335,7 @@ export default function HomePage() {
             </div>
 
             {/* Campus Card 3: Niphad */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between group">
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
@@ -344,7 +344,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-700 text-white shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900 text-white shadow-sm uppercase tracking-wider">
                       CBSE Board
                     </span>
                   </div>
@@ -354,11 +354,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-amber-600 transition">
+                  <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-blue-600 transition">
                     Wisdom International School – Niphad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <span>Niphad-Sambhajinagar Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -370,7 +370,7 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/wisdom-international-school-niphad"
-                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-amber-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
                 >
                   <span>Explore Campus</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -832,20 +832,20 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/results"
-                  className="px-6 py-3 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition inline-flex items-center gap-2 shrink-0"
+                  className="btn-shimmer px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition inline-flex items-center gap-2 shrink-0"
                 >
                   <span>View All Results</span>
-                  <ArrowRight className="w-4 h-4 text-gold-400" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* 3 Topper Result Cards with Full Face Framing */}
+          {/* 3 Topper Result Cards with Full Face Framing & 3D Card Hover */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Card 1: JEE Main */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student1.jpg"
@@ -861,7 +861,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: NEET */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student5.jpg"
@@ -877,7 +877,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3: MHT-CET */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition">
+            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student7.jpg"
@@ -885,7 +885,7 @@ export default function HomePage() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-900 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
                 MHT-CET Champions
               </span>
               <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif">98.5+ Percentile</h4>

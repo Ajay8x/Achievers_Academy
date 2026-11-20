@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdminSidebar from '@/components/AdminSidebar';
 import { Bot, Plus, Trash2, Search, CheckCircle2, AlertCircle, BookOpen } from 'lucide-react';
+import { useToast } from '@/context/ToastContext';
 
 interface ChatbotKBItem {
   id: string;
@@ -16,6 +17,7 @@ interface ChatbotKBItem {
 
 export default function AdminKBPage() {
   const router = useRouter();
+  const { showError, showSuccess } = useToast();
   const [items, setItems] = useState<ChatbotKBItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -50,6 +52,16 @@ export default function AdminKBPage() {
 
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!newQuestion.trim()) {
+      showError('Please enter a question for the knowledge base.', 'Question Required');
+      return;
+    }
+    if (!newAnswerEn.trim()) {
+      showError('Please enter the English answer.', 'Answer Required');
+      return;
+    }
+
     setSaving(true);
 
     try {
@@ -72,9 +84,13 @@ export default function AdminKBPage() {
         setNewAnswerEn('');
         setNewAnswerHi('');
         fetchKB();
+        showSuccess('New knowledge base item added successfully!', 'Item Added');
+      } else {
+        showError('Failed to add knowledge base item.', 'Save Error');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      showError(e.message || 'Error saving knowledge base entry.', 'Save Error');
     } finally {
       setSaving(false);
     }
@@ -87,9 +103,13 @@ export default function AdminKBPage() {
       const res = await fetch(`/api/admin/kb?id=${id}`, { method: 'DELETE' });
       if (res.ok) {
         setItems(prev => prev.filter(i => i.id !== id));
+        showSuccess('Knowledge base entry deleted successfully.', 'Item Removed');
+      } else {
+        showError('Failed to delete item.', 'Delete Error');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      showError(e.message || 'Error removing knowledge base item.', 'Delete Error');
     }
   };
 

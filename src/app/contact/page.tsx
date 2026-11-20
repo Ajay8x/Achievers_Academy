@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useToast } from '@/context/ToastContext';
 import { 
   Phone, 
   Mail, 
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function ContactPage() {
+  const { showError, showSuccess } = useToast();
   const [formData, setFormData] = useState({
     studentName: '',
     parentName: '',
@@ -32,8 +34,22 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
+
+    if (!formData.studentName.trim() || formData.studentName.trim().length < 2) {
+      showError("Please enter your name.", "Name Required");
+      setError("Please enter your name.");
+      return;
+    }
+
+    const cleanPhone = formData.phone.replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      showError("Please provide a valid 10-digit phone number.", "Invalid Phone Number");
+      setError("Please provide a valid 10-digit phone number.");
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const res = await fetch('/api/admission', {
@@ -51,8 +67,11 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
+      showSuccess("Your message has been sent successfully! Our academic team will respond promptly.", "Message Sent");
     } catch (err: any) {
-      setError(err.message || 'Error sending message. Please try again.');
+      const msg = err.message || 'Error sending message. Please try again.';
+      setError(msg);
+      showError(msg, 'Contact Form Error');
     } finally {
       setLoading(false);
     }

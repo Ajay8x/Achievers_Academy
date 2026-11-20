@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Lock, Mail, AlertCircle, School, ArrowRight, ShieldCheck } from 'lucide-react';
+import { useToast } from '@/context/ToastContext';
 
 export default function AdminLoginPage() {
   const router = useRouter();
+  const { showError, showSuccess } = useToast();
   const [username, setUsername] = useState('admin@achieversacademy.com');
   const [password, setPassword] = useState('Achievers@2025');
   const [error, setError] = useState('');
@@ -28,10 +30,15 @@ export default function AdminLoginPage() {
         throw new Error(data.error || 'Authentication failed');
       }
 
-      router.push('/admin');
-      router.refresh();
+      showSuccess("Login successful! Redirecting to admin dashboard...", "Authentication Succeeded");
+      setTimeout(() => {
+        router.push('/admin');
+        router.refresh();
+      }, 500);
     } catch (err: any) {
-      setError(err.message || 'Invalid credentials');
+      const msg = err.message || 'Invalid administrator username or password.';
+      setError(msg);
+      showError(msg, 'Login Failed');
     } finally {
       setLoading(false);
     }

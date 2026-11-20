@@ -125,6 +125,58 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* =========================================================================
+            LIVE ADMISSION MARQUEE TICKER (Blue, Black, White Animation)
+           ========================================================================= */}
+        <div className="bg-gradient-to-r from-[#070E1E] via-blue-950 to-[#070E1E] text-white text-[11px] sm:text-xs py-1.5 overflow-hidden border-b border-blue-900/40">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-10 font-medium tracking-wide">
+            <span className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <strong className="text-blue-300 uppercase tracking-wider font-bold">ADMISSIONS 2025-26:</strong>
+              <span>Enrollments open for Nursery to 12th (CBSE &amp; State Board) across Manmad, Chandwad &amp; Niphad Campuses</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>🏆</span>
+              <strong className="text-white font-bold">TOP RANKS:</strong>
+              <span>99.12 %ile in JEE Advanced • 635/720 in NEET • 98.8 %ile in MHT-CET</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>🚌</span>
+              <span>GPS Transport &amp; Air-Cooled Residential Hostels Available</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>📞</span>
+              <span>Helpline: <a href="tel:8459360161" className="text-blue-300 font-bold hover:underline">+91 8459360161</a></span>
+            </span>
+
+            {/* Seamless Repeat */}
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <strong className="text-blue-300 uppercase tracking-wider font-bold">ADMISSIONS 2025-26:</strong>
+              <span>Enrollments open for Nursery to 12th (CBSE &amp; State Board) across Manmad, Chandwad &amp; Niphad Campuses</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>🏆</span>
+              <strong className="text-white font-bold">TOP RANKS:</strong>
+              <span>99.12 %ile in JEE Advanced • 635/720 in NEET • 98.8 %ile in MHT-CET</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>🚌</span>
+              <span>GPS Transport &amp; Air-Cooled Residential Hostels Available</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-2">
+              <span>📞</span>
+              <span>Helpline: <a href="tel:8459360161" className="text-blue-300 font-bold hover:underline">+91 8459360161</a></span>
+            </span>
+          </div>
+        </div>
 
         {/* =========================================================================
             MAIN NAVBAR: Concise Text Navigation + "✦ Get In Touch" CTA
@@ -353,7 +405,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-blue-600/30 transition flex items-center gap-1.5 group transform hover:-translate-y-0.5"
+                className="btn-shimmer px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-blue-600/30 transition flex items-center gap-1.5 group transform hover:-translate-y-0.5"
               >
                 <Sparkles className="w-3.5 h-3.5 text-blue-200 group-hover:rotate-12 transition-transform" />
                 <span>Apply Now</span>

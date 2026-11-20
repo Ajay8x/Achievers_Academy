@@ -5,6 +5,18 @@ import { getCurrentAdmin } from '@/lib/auth';
 // Rate limiting in-memory store
 const rateLimit = new Map<string, { count: number; timestamp: number }>();
 
+// XSS Prevention: Sanitize string inputs
+function sanitizeInput(str: string): string {
+  if (!str || typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .trim();
+}
+
 export async function POST(req: NextRequest) {
   try {
     const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
@@ -57,19 +69,19 @@ export async function POST(req: NextRequest) {
     }
 
     const saved = db.addEnquiry({
-      studentName: studentName.trim(),
-      parentName: (parentName || 'Parent / Guardian').trim(),
+      studentName: sanitizeInput(studentName),
+      parentName: sanitizeInput(parentName || 'Parent / Guardian'),
       phone: cleanPhone,
-      email: email ? email.trim() : undefined,
-      campus,
-      program,
-      batch: batch || 'Regular Batch',
+      email: email ? sanitizeInput(email) : undefined,
+      campus: sanitizeInput(campus),
+      program: sanitizeInput(program),
+      batch: sanitizeInput(batch || 'Regular Batch'),
       hostelRequired: Boolean(hostelRequired),
       transportRequired: Boolean(transportRequired),
-      message: message ? message.trim() : '',
-      relationship: relationship || 'Parent',
-      preferredMedium: preferredMedium || 'English',
-      source: source || 'Website Enquiry Form'
+      message: message ? sanitizeInput(message) : '',
+      relationship: sanitizeInput(relationship || 'Parent'),
+      preferredMedium: sanitizeInput(preferredMedium || 'English'),
+      source: sanitizeInput(source || 'Website Enquiry Form')
     });
 
     return NextResponse.json({

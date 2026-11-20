@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, CheckCircle2, AlertCircle, School, Phone, User, Mail, Send } from 'lucide-react';
+import { useToast } from '@/context/ToastContext';
 
 interface AdmissionModalProps {
   isOpen: boolean;
@@ -16,6 +17,7 @@ export default function AdmissionModal({
   defaultCampus = 'Achievers World School (Manmad)',
   defaultProgram = 'Class 11 Science (JEE/NEET)'
 }: AdmissionModalProps) {
+  const { showError, showSuccess } = useToast();
   const [formData, setFormData] = useState({
     studentName: '',
     parentName: '',
@@ -37,8 +39,28 @@ export default function AdmissionModal({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
+
+    if (!formData.studentName.trim() || formData.studentName.trim().length < 2) {
+      showError("Please enter the student's full name.", "Student Name Required");
+      setError("Please enter the student's full name.");
+      return;
+    }
+
+    if (!formData.parentName.trim() || formData.parentName.trim().length < 2) {
+      showError("Please enter the parent/guardian name.", "Parent Name Required");
+      setError("Please enter the parent/guardian name.");
+      return;
+    }
+
+    const cleanPhone = formData.phone.replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      showError("Please enter a valid 10-digit mobile number.", "Invalid Phone Number");
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const res = await fetch('/api/admission', {
@@ -53,12 +75,15 @@ export default function AdmissionModal({
       }
 
       setSuccess(true);
+      showSuccess("Admission enquiry submitted successfully! Our counselor will call you shortly.", "Enquiry Received");
       setTimeout(() => {
         setSuccess(false);
         onClose();
-      }, 3000);
+      }, 2500);
     } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again.');
+      const msg = err.message || 'Something went wrong. Please try again.';
+      setError(msg);
+      showError(msg, 'Submission Failed');
     } finally {
       setLoading(false);
     }

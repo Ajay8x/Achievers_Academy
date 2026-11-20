@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useToast } from '@/context/ToastContext';
 import { 
   School, 
   CheckCircle2, 
@@ -18,6 +19,7 @@ import {
 } from 'lucide-react';
 
 export default function AdmissionPage() {
+  const { showError, showSuccess } = useToast();
   const [formData, setFormData] = useState({
     studentName: '',
     parentName: '',
@@ -41,8 +43,29 @@ export default function AdmissionPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError('');
+
+    // Client-side Validation with Top Pop-ups
+    if (!formData.studentName.trim() || formData.studentName.trim().length < 2) {
+      showError("Please enter the student's full name.", "Validation Error");
+      setError("Please enter the student's full name.");
+      return;
+    }
+
+    if (!formData.parentName.trim() || formData.parentName.trim().length < 2) {
+      showError("Please enter the parent/guardian name.", "Validation Error");
+      setError("Please enter the parent/guardian name.");
+      return;
+    }
+
+    const cleanPhone = formData.phone.replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      showError("Please provide a valid 10-digit mobile number for counselor follow-up.", "Invalid Mobile Number");
+      setError("Please provide a valid 10-digit mobile number.");
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const res = await fetch('/api/admission', {
@@ -57,8 +80,11 @@ export default function AdmissionPage() {
       }
 
       setSubmitted(true);
+      showSuccess("Admission enquiry submitted successfully! Our counselor will call you within 24 hours.", "Application Received");
     } catch (err: any) {
-      setError(err.message || 'Submission failed. Please try again.');
+      const msg = err.message || 'Submission failed. Please try again.';
+      setError(msg);
+      showError(msg, 'Submission Failed');
     } finally {
       setLoading(false);
     }

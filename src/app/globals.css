@@ -108,3 +108,91 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 .glow-emerald-pulse {
   animation: pulseGlowEmerald 3s infinite ease-in-out;
 }
+
+/* Floating Levitation Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Shimmer Sweep Animation for CTA Buttons */
+@keyframes shimmerSweep {
+  0% {
+    transform: skewX(-20deg) translateX(-200%);
+  }
+  100% {
+    transform: skewX(-20deg) translateX(250%);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg) translateX(-200%);
+  animation: shimmerSweep 3.5s infinite;
+  pointer-events: none;
+}
+
+/* Continuous Marquee Scrolling Ticker */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 3D Elevation Card Hover */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.16), 0 0 20px rgba(37, 99, 235, 0.12);
+}
+
+/* Top Pop-up / Toast Notification Animation */
+@keyframes toastSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-toast-slide-down {
+  animation: toastSlideDown 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

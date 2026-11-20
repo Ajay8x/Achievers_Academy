@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, X, Send, Sparkles, MessageCircle, Phone, ArrowRight, RefreshCw, UserCheck } from 'lucide-react';
+import { useToast } from '@/context/ToastContext';
 
 interface Message {
   id: string;
@@ -13,6 +14,7 @@ interface Message {
 }
 
 export default function AIChatbot() {
+  const { showError } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
@@ -76,6 +78,7 @@ export default function AIChatbot() {
 
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
+      showError("Connection interrupted. You can connect directly with our admission desk on WhatsApp: +91 8459360161", "Chatbot Network Error");
       setMessages((prev) => [
         ...prev,
         {

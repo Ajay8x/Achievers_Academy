@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send, Sparkles, MessageCircle, Phone, ArrowRight, RefreshCw, UserCheck } from 'lucide-react';
+import { Bot, X, Send, Sparkles, MessageCircle, Phone, ArrowRight, RefreshCw, UserCheck, Languages } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 
 interface Message {
@@ -13,24 +13,39 @@ interface Message {
   timestamp: string;
 }
 
+const WELCOME_MESSAGES = {
+  en: {
+    id: 'welcome-en',
+    sender: 'bot' as const,
+    text: 'Namaste! Welcome to Achievers Group of Institutes. I am your Virtual Admission Counselor. Ask me about our 3 Campuses (Manmad, Chandwad, Niphad), CBSE & State Board classes, JEE/NEET/CET coaching, or Hostel & Transport facilities!',
+    suggestedActions: [
+      'Campuses & Locations',
+      'JEE & NEET Coaching',
+      'Hostel Facilities',
+      'Admission Form'
+    ],
+    timestamp: 'Just now'
+  },
+  hi: {
+    id: 'welcome-hi',
+    sender: 'bot' as const,
+    text: 'नमस्ते! अचीवर्स ग्रुप ऑफ इंस्टीट्यूट्स में आपका स्वागत है। मैं आपका वर्चुअल एडमिशन काउंसलर हूँ। आप हमारे 3 कैंपसों (मनमाड, चांदवड़, निफाड़), CBSE एवं स्टेट बोर्ड, JEE/NEET/CET कोचिंग, या हॉस्टल व बस सुविधा के बारे में पूछ सकते हैं!',
+    suggestedActions: [
+      'कैंपस एवं स्थान',
+      'JEE और NEET कोचिंग',
+      'हॉस्टल सुविधाएं',
+      'एडमिशन फॉर्म'
+    ],
+    timestamp: 'अभी'
+  }
+};
+
 export default function AIChatbot() {
   const { showError } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 'welcome',
-      sender: 'bot',
-      text: 'Namaste! Welcome to Achievers Group of Institutes. I am your Virtual Admission Counselor. Ask me about our 3 Campuses (Manmad, Chandwad, Niphad), CBSE & State Board classes, JEE/NEET/CET coaching, or Hostel & Transport facilities!',
-      suggestedActions: [
-        'Campuses & Locations',
-        'JEE & NEET Coaching',
-        'Hostel Facilities',
-        'Admission Form'
-      ],
-      timestamp: 'Just now'
-    }
-  ]);
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
+  const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGES.en]);
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -43,6 +58,26 @@ export default function AIChatbot() {
       scrollToBottom();
     }
   }, [messages, isOpen]);
+
+  const switchLanguage = (lang: 'en' | 'hi') => {
+    setLanguage(lang);
+    if (messages.length <= 1) {
+      setMessages([WELCOME_MESSAGES[lang]]);
+    } else {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `sys-${Date.now()}`,
+          sender: 'bot',
+          text: lang === 'hi'
+            ? '✅ भाषा बदलकर हिन्दी कर दी गई है। अब आप हिंदी या हिंग्लिश में सवाल पूछ सकते हैं।'
+            : '✅ Language changed to English. You can now ask questions in English.',
+          suggestedActions: lang === 'hi' ? WELCOME_MESSAGES.hi.suggestedActions : WELCOME_MESSAGES.en.suggestedActions,
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+    }
+  };
 
   const handleSend = async (userText?: string) => {
     const textToSend = userText || input;
@@ -63,14 +98,14 @@ export default function AIChatbot() {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: textToSend.trim() })
+        body: JSON.stringify({ message: textToSend.trim(), preferredLang: language })
       });
       const data = await res.json();
 
       const botMsg: Message = {
         id: `b-${Date.now()}`,
         sender: 'bot',
-        text: data.reply || "I'm here to help with admissions at Achievers Academy.",
+        text: data.reply || (language === 'hi' ? "मैं अचीवर्स एकेडमी एडमिशन में आपकी सहायता के लिए उपस्थित हूँ।" : "I'm here to help with admissions at Achievers Academy."),
         whatsappUrl: data.whatsappUrl,
         suggestedActions: data.suggestedActions,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
@@ -78,13 +113,20 @@ export default function AIChatbot() {
 
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
-      showError("Connection interrupted. You can connect directly with our admission desk on WhatsApp: +91 8459360161", "Chatbot Network Error");
+      showError(
+        language === 'hi' 
+          ? "संपर्क में त्रुटि। आप हमारे एडमिशन डेस्क से सीधे व्हाट्सएप पर बात कर सकते हैं: +91 8459360161"
+          : "Connection interrupted. You can connect directly with our admission desk on WhatsApp: +91 8459360161", 
+        "Chatbot Error"
+      );
       setMessages((prev) => [
         ...prev,
         {
           id: `b-${Date.now()}`,
           sender: 'bot',
-          text: "I'm having a brief connection issue. Please connect directly with our admission counselors at +91 8459360161.",
+          text: language === 'hi'
+            ? "नेटवर्क समस्या के कारण उत्तर नहीं मिल पाया। कृपया हमारे एडमिशन काउंसलर से +91 8459360161 पर संपर्क करें।"
+            : "I'm having a brief connection issue. Please connect directly with our admission counselors at +91 8459360161.",
           whatsappUrl: 'https://wa.me/918459360161',
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
@@ -99,22 +141,23 @@ export default function AIChatbot() {
       {/* Floating Trigger (Bottom-Left) */}
       <div className="fixed bottom-5 left-5 z-40 flex flex-col items-start">
         {isOpen && (
-          <div className="mb-3 w-[92vw] sm:w-[390px] h-[520px] max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-navy-100 flex flex-col overflow-hidden animate-slide-up">
+          <div className="mb-3 w-[92vw] sm:w-[395px] h-[530px] max-h-[82vh] bg-white rounded-2xl shadow-2xl border border-navy-100 flex flex-col overflow-hidden animate-slide-up">
+            
             {/* Header */}
-            <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white p-4 flex items-center justify-between border-b border-navy-700">
-              <div className="flex items-center gap-3">
+            <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white p-3.5 flex items-center justify-between border-b border-navy-700">
+              <div className="flex items-center gap-2.5">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400/40 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-full bg-gold-500/20 border border-gold-400/40 flex items-center justify-center">
                     <Bot className="w-5 h-5 text-gold-400" />
                   </div>
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-navy-900"></span>
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h4 className="font-bold text-sm font-serif">Achievers Virtual Counselor</h4>
-                    <span className="bg-gold-500/20 text-gold-300 text-[10px] font-bold px-1.5 py-0.5 rounded border border-gold-400/30">AI</span>
+                    <h4 className="font-bold text-xs sm:text-sm font-serif">Achievers Virtual Counselor</h4>
+                    <span className="bg-gold-500/20 text-gold-300 text-[10px] font-bold px-1.5 py-0.2 rounded border border-gold-400/30">AI</span>
                   </div>
-                  <p className="text-[11px] text-slate-300 flex items-center gap-1">
+                  <p className="text-[10px] sm:text-[11px] text-slate-300 flex items-center gap-1">
                     <span>Verified Institutional Assistant</span>
                     <span>•</span>
                     <span className="text-emerald-400 font-medium">Online</span>
@@ -124,26 +167,64 @@ export default function AIChatbot() {
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-slate-300 hover:text-white p-1 rounded-full hover:bg-white/10 transition"
+                aria-label="Close Assistant"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Language Banner */}
-            <div className="bg-navy-50/80 px-4 py-1.5 border-b border-navy-100 text-[11px] text-navy-800 flex items-center justify-between font-medium">
-              <span>Supports: English, हिन्दी, Hinglish</span>
-              <span className="text-gold-700 font-semibold">24/7 Admission Help</span>
+            {/* Language Selector Option Banner (English vs हिन्दी) */}
+            <div className="bg-slate-100/95 px-3.5 py-1.5 border-b border-slate-200 flex items-center justify-between text-xs">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 text-[11px] font-bold text-slate-600">
+                  <Languages className="w-3.5 h-3.5 text-blue-600" />
+                  <span>भाषा / Option:</span>
+                </div>
+                <div className="inline-flex rounded-lg bg-white p-0.5 border border-slate-200 shadow-2xs">
+                  <button
+                    type="button"
+                    onClick={() => switchLanguage('en')}
+                    className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold transition ${
+                      language === 'en'
+                        ? 'bg-blue-600 text-white shadow-xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => switchLanguage('hi')}
+                    className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold transition flex items-center gap-1 ${
+                      language === 'hi'
+                        ? 'bg-emerald-600 text-white shadow-xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>हिन्दी</span>
+                    {language === 'hi' && <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />}
+                  </button>
+                </div>
+              </div>
+
+              <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                language === 'hi' 
+                  ? 'text-emerald-800 bg-emerald-50 border-emerald-200' 
+                  : 'text-blue-800 bg-blue-50 border-blue-200'
+              }`}>
+                {language === 'hi' ? 'हिन्दी मोड सक्रिय' : '24/7 Admission Help'}
+              </span>
             </div>
 
             {/* Messages Scroll Area */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-50/50">
+            <div className="flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-50/50">
               {messages.map((m) => (
                 <div
                   key={m.id}
                   className={`flex flex-col ${m.sender === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-sm leading-relaxed ${
+                    className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm leading-relaxed ${
                       m.sender === 'user'
                         ? 'bg-navy-900 text-white rounded-br-none shadow-sm'
                         : 'bg-white text-slate-800 border border-slate-200/80 rounded-bl-none shadow-sm'
@@ -161,7 +242,7 @@ export default function AIChatbot() {
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow transition"
                         >
                           <MessageCircle className="w-3.5 h-3.5" />
-                          <span>Talk with Counselor on WhatsApp</span>
+                          <span>{language === 'hi' ? 'व्हाट्सएप पर काउंसलर से बात करें' : 'Talk with Counselor on WhatsApp'}</span>
                         </a>
                       </div>
                     )}
@@ -189,9 +270,9 @@ export default function AIChatbot() {
               ))}
 
               {loading && (
-                <div className="flex items-center gap-2 p-2 bg-white border border-slate-200 rounded-xl w-32 shadow-2xs">
-                  <RefreshCw className="w-3.5 h-3.5 text-navy-600 animate-spin" />
-                  <span className="text-xs text-slate-500">Thinking...</span>
+                <div className="flex items-center gap-2 p-2 bg-white border border-slate-200 rounded-xl w-36 shadow-2xs">
+                  <RefreshCw className="w-3.5 h-3.5 text-blue-600 animate-spin" />
+                  <span className="text-xs text-slate-500">{language === 'hi' ? 'काउंसलर सोच रहा है...' : 'Thinking...'}</span>
                 </div>
               )}
               <div ref={messagesEndRef} />
@@ -207,15 +288,15 @@ export default function AIChatbot() {
             >
               <input
                 type="text"
-                placeholder="Ask in English or Hinglish..."
+                placeholder={language === 'hi' ? "यहाँ हिंदी या हिंग्लिश में पूछें..." : "Ask in English or Hinglish..."}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="flex-1 px-3 py-2 text-xs sm:text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-navy-600 focus:outline-none"
+                className="flex-1 px-3 py-2 text-xs sm:text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={loading || !input.trim()}
-                className="p-2.5 bg-navy-900 hover:bg-navy-800 disabled:opacity-40 text-white rounded-xl transition shadow"
+                className="p-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-40 text-white rounded-xl transition shadow"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -223,7 +304,7 @@ export default function AIChatbot() {
           </div>
         )}
 
-        {/* Trigger Button - Blue, Black, White Luxury with Mild Glow */}
+        {/* Trigger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="AI Admission Assistant"
@@ -234,12 +315,12 @@ export default function AIChatbot() {
             <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping"></span>
             <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full ring-1 ring-black"></span>
           </div>
-          <span className="text-xs font-bold tracking-wide text-white drop-shadow-sm">
-            AI Counselor
+          <span className="text-xs font-bold tracking-wide text-white drop-shadow-sm flex items-center gap-1">
+            <span>AI Counselor</span>
+            <span className="text-[9px] bg-blue-500/30 text-blue-200 px-1 rounded">EN/हिन्दी</span>
           </span>
         </button>
       </div>
     </>
   );
 }
-

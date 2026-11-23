@@ -232,7 +232,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-1',
       category: 'Campuses',
       question: 'Where are Achievers Academy campuses located?',
-      keywords: ['campus', 'campuses', 'branches', 'location', 'address', 'kaha hai', 'kahan', 'manmad', 'chandwad', 'niphad'],
+      keywords: ['campus', 'campuses', 'branches', 'location', 'address', 'kaha hai', 'kahan', 'manmad', 'chandwad', 'niphad', 'कैंपस', 'शाखा', 'कहाँ', 'पता', 'स्थान', 'मनमाड', 'चांदवड़', 'निफाड़'],
       answerEn: 'Achievers Group of Institutes operates 3 premium campuses across Nashik district:\n1. Achievers World School: Shrinath Dream City, Umrane Road, Manmad.\n2. Achievers IIT & Medical: Opp. Indian Oil Petrol Pump, Chandwad-Manmad Road, Chandwad.\n3. Wisdom International School: Niphad-Sambhajinagar Road, Niphad.\nEach campus has modern classrooms, state-of-the-art laboratories, and sports grounds.',
       answerHi: 'अचीवर्स ग्रुप ऑफ इंस्टीट्यूट्स के 3 प्रमुख कैंपस हैं:\n1. अचीवर्स वर्ल्ड स्कूल – श्रीनाथ ड्रीम सिटी, उमराने रोड, मनमाड।\n2. अचीवर्स आईआईटी एवं मेडिकल – इंडियन ऑयल पेट्रोल पंप के सामने, चांदवड-मनमाड रोड, चांदवड।\n3. विज़डम इंटरनेशनल स्कूल – निफाड-संभाजीनगर रोड, निफाड।'
     },
@@ -240,7 +240,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-2',
       category: 'Admissions',
       question: 'How do I apply for admission?',
-      keywords: ['admission', 'apply', 'entry', 'process', 'form', 'pravesh', 'daakhila', 'kaise apply kare'],
+      keywords: ['admission', 'apply', 'entry', 'process', 'form', 'pravesh', 'daakhila', 'kaise apply kare', 'एडमिशन', 'दाखिला', 'प्रवेश', 'फॉर्म', 'आवेदन', 'प्रक्रिया'],
       answerEn: 'Admissions are open for Nursery to Class 12th (CBSE & State Board) as well as integrated JEE, NEET, and MHT-CET coaching. You can apply directly through our online Admission form on this website, or visit any campus, or call our admission desk at +91 8459360161 / +91 8999542174.',
       answerHi: 'नर्सरी से 12वीं तक (CBSE एवं महाराष्ट्र स्टेट बोर्ड) और JEE, NEET, MHT-CET कोचिंग के लिए प्रवेश खुले हैं। आप वेबसाइट पर ऑनलाइन एडमिशन फॉर्म भर सकते हैं या हमारे हेल्पलाइन +91 8459360161 / +91 8999542174 पर संपर्क कर सकते हैं।'
     },
@@ -248,7 +248,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-3',
       category: 'Hostel',
       question: 'Are hostel facilities available for students?',
-      keywords: ['hostel', 'residential', 'stay', 'room', 'boarding', 'mess', 'food', 'rahena', 'khana'],
+      keywords: ['hostel', 'residential', 'stay', 'room', 'boarding', 'mess', 'food', 'rahena', 'khana', 'हॉस्टल', 'छात्रावास', 'रहना', 'खाना', 'मेस', 'सुविधा', 'सुविधाएं', 'कमरा'],
       answerEn: 'Yes! We offer comprehensive residential and hostel facilities for both boys and girls. Facilities include 24x7 security and warden care, nutritious hygienic meals, daily fitness & yoga routines, dedicated night study reading rooms, and strict disciplined environment.',
       answerHi: 'हाँ! हमारे पास छात्र एवं छात्राओं के लिए सुरक्षित और सुसज्जित हॉस्टल (आवासीय) की सुविधा उपलब्ध है। इसमें पौष्टिक भोजन, 24/7 सुरक्षा, वार्डन की देखरेख, योग और रात में पढ़ने के लिए समर्पित नाइट स्टडी रूम शामिल हैं।'
     },
@@ -256,7 +256,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-4',
       category: 'Transport',
       question: 'Is bus transportation available?',
-      keywords: ['transport', 'bus', 'vehicle', 'pickup', 'drop', 'safety', 'gps', 'gadi', 'van'],
+      keywords: ['transport', 'bus', 'vehicle', 'pickup', 'drop', 'safety', 'gps', 'gadi', 'van', 'बस', 'गाड़ी', 'ट्रांसपोर्ट', 'वाहन', 'पिकअप', 'ड्रॉप'],
       answerEn: 'Yes, Achievers operates a dedicated fleet of school buses covering Manmad, Chandwad, Niphad, and surrounding villages. All buses are equipped with GPS tracking, CCTV surveillance, first aid, and experienced background-verified drivers.',
       answerHi: 'हाँ, अचीवर्स की स्कूल बस सेवा मनमाड, चांदवड, निफाड और आसपास के ग्रामीण क्षेत्रों में उपलब्ध है। सभी बसें जीपीएस ट्रैकिंग, सीसीटीवी और प्रशिक्षित चालकों से सुसज्जित हैं।'
     },
@@ -264,7 +264,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-5',
       category: 'Courses',
       question: 'What competitive exam coaching is offered?',
-      keywords: ['jee', 'neet', 'cet', 'mht-cet', 'iit', 'medical', 'engineering', 'competitive', 'coaching'],
+      keywords: ['jee', 'neet', 'cet', 'mht-cet', 'iit', 'medical', 'engineering', 'competitive', 'coaching', 'कोचिंग', 'तैयारी', 'इंजीनियरिंग', 'मेडिकल', 'नीट', 'सीईटी', 'जेईई'],
       answerEn: 'Our Chandwad campus specializes in integrated 11th & 12th Science coaching for JEE (Main & Advanced), NEET (Medical UG), and MHT-CET. We provide expert faculty mentors, regular mock test series, doubt clearing sessions, and personalized performance tracking.',
       answerHi: 'हमारे चांदवड कैंपस में 11वीं और 12वीं साइंस के साथ JEE (Main & Advanced), NEET और MHT-CET की गहन तैयारी कराई जाती है। इसमें अनुभवी शिक्षक, मॉक टेस्ट सीरीज और विशेष डाउट सेशन शामिल हैं।'
     },
@@ -272,7 +272,7 @@ const DEFAULT_SEED: DatabaseSchema = {
       id: 'kb-6',
       category: 'General',
       question: 'What are the contact numbers and email?',
-      keywords: ['contact', 'phone', 'mobile', 'call', 'email', 'number', 'whatsapp', 'sampark'],
+      keywords: ['contact', 'phone', 'mobile', 'call', 'email', 'number', 'whatsapp', 'sampark', 'संपर्क', 'फोन', 'मोबाइल', 'व्हाट्सएप', 'नंबर', 'ईमेल'],
       answerEn: 'You can contact us at:\n• Phone: +91 8459360161 / +91 8999542174 / +91 8385853131\n• Email: achieversgroupofinstitutes@gmail.com\n• WhatsApp: Click the WhatsApp floating button on any page to chat directly with our counselors!',
       answerHi: 'आप हमसे निम्नलिखित नंबरों पर संपर्क कर सकते हैं:\n• फोन: +91 8459360161 / +91 8999542174 / +91 8385853131\n• ईमेल: achieversgroupofinstitutes@gmail.com\n• व्हाट्सएप: वेबसाइट पर दिए गए फ्लोटिंग व्हाट्सएप बटन पर क्लिक करें।'
     }
@@ -451,6 +451,15 @@ export const db = {
     data.chatbotKB.push(newItem);
     writeDb(data);
     return newItem;
+  },
+
+  updateKBItem(id: string, updates: Partial<Omit<ChatbotKBItem, 'id'>>): ChatbotKBItem | null {
+    const data = ensureDb();
+    const index = data.chatbotKB.findIndex(k => k.id === id);
+    if (index === -1) return null;
+    data.chatbotKB[index] = { ...data.chatbotKB[index], ...updates };
+    writeDb(data);
+    return data.chatbotKB[index];
   },
 
   deleteKBItem(id: string): boolean {

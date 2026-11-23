@@ -38,6 +38,38 @@ export async function POST(req: NextRequest) {
   }
 }
 
+export async function PUT(req: NextRequest) {
+  try {
+    const admin = await getCurrentAdmin();
+    if (!admin) {
+      return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+    }
+
+    const body = await req.json();
+    const { id, category, question, keywords, answerEn, answerHi } = body;
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID required.' }, { status: 400 });
+    }
+
+    const updated = db.updateKBItem(id, {
+      category,
+      question,
+      keywords: Array.isArray(keywords) ? keywords : (keywords || '').split(',').map((k: string) => k.trim()),
+      answerEn,
+      answerHi: answerHi || answerEn
+    });
+
+    if (!updated) {
+      return NextResponse.json({ error: 'Item not found.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, item: updated });
+  } catch (e: any) {
+    return NextResponse.json({ error: 'Failed to update KB item.' }, { status: 500 });
+  }
+}
+
 export async function DELETE(req: NextRequest) {
   try {
     const admin = await getCurrentAdmin();

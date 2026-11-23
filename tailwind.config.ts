@@ -38,8 +38,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['"Times New Roman"', 'Times', 'Georgia', 'serif'],
-        serif: ['"Times New Roman"', 'Times', 'Georgia', 'serif'],
+        sans: ['"DM Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        serif: ['"DM Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.4s ease-out forwards',

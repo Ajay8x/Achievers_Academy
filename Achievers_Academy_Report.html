@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Achievers Academy - Complete Project Master Report</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
     @page {
       size: A4;
       margin: 12mm 14mm 12mm 14mm;
@@ -14,11 +15,11 @@
       print-color-adjust: exact !important;
     }
     body {
-      font-family: 'Times New Roman', Times, Georgia, serif;
+      font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: #0F172A;
       background: #FFFFFF;
       line-height: 1.45;
-      font-size: 10pt;
+      font-size: 9.5pt;
       margin: 0;
       padding: 0;
     }
@@ -48,6 +49,7 @@
       margin-bottom: 6px;
     }
     h1 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 20pt;
       margin: 0 0 4px 0;
       font-weight: bold;
@@ -76,6 +78,7 @@
       letter-spacing: 0.5px;
     }
     h2 {
+      font-family: 'Playfair Display', Georgia, serif;
       color: #070E1E;
       font-size: 13pt;
       border-bottom: 2px solid #2563EB;
@@ -84,6 +87,7 @@
       margin-bottom: 10px;
     }
     h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       color: #1E3A8A;
       font-size: 11pt;
       margin-top: 12px;
@@ -271,15 +275,15 @@
     <div class="card dark-card">
       <h4>Institutional Color Palette & Typography</h4>
       <p>• <strong>Primary Theme:</strong> Deep Midnight Jet Black (<code>#070E1E</code>), Royal Blue (<code>#2563EB</code>), and Pure White (<code>#FFFFFF</code>), complemented by Gold badges (<code>#F59E0B</code>).</p>
-      <p>• <strong>Typography:</strong> Academic Serif (<strong>Times New Roman</strong>, Times, Georgia) applied globally across headings, hero banners, navigation, cards, and body prose.</p>
+      <p>• <strong>Typography (Modern Geometric Sans):</strong> Modern, high-legibility geometric sans-serif (<strong>DM Sans</strong>) unified across all headings, banners, navigation, and body content for ultra-sharp aesthetic clarity and effortless readability across desktop and mobile screens.</p>
       <p>• <strong>Action CTA:</strong> Standardized to <strong>"Apply Now"</strong> across header, mobile menu, and all campus registration sections.</p>
     </div>
     <div class="card dark-card">
-      <h4>Micro-Interactions & Animations</h4>
+      <h4>Micro-Interactions, Navigation & Animations</h4>
+      <p>• <strong>Segmented Academic Navigation:</strong> Dedicated hierarchical sections for <strong>Class 11th</strong> (11th CET, 11th JEE, 11th NEET) and <strong>Class 12th</strong> (12th CET, 12th JEE, 12th NEET) with category tabs and deep-linking.</p>
+      <p>• <strong>Examination Results Hub:</strong> Targeted divisions for <strong>CET Results</strong>, <strong>NEET Results</strong>, <strong>JEE Results</strong>, and <strong>11th–12th Board Results</strong> with 100% pass record highlights.</p>
       <p>• <strong>Live Marquee Ticker:</strong> Continuous smooth marquee (<code>animate-marquee</code>) displaying live academic year 2025-26 admission announcements.</p>
       <p>• <strong>Button Shimmer:</strong> Glossy light-sweep effect (<code>btn-shimmer</code>) on "Apply Now" buttons.</p>
-      <p>• <strong>3D Card Lift:</strong> Interactive elevation with soft blue glow (<code>card-lift</code>) on campus & topper cards.</p>
-      <p>• <strong>Chatbot Breathing Glow:</strong> Ambient pulsing blue badge (<code>glow-blue-pulse</code>) on floating assistant.</p>
     </div>
   </div>
 
@@ -354,10 +358,52 @@
         <td>Admin JWT Required</td>
         <td>Provides CRUD management for chatbot institutional verified knowledge base.</td>
       </tr>
+      <tr>
+        <td><code>/api/admin/results</code></td>
+        <td><span class="badge-blue">GET/POST/DEL</span></td>
+        <td>Admin JWT Required</td>
+        <td>Manages academic toppers (JEE/NEET/Board) and student/parent testimonials.</td>
+      </tr>
     </tbody>
   </table>
 
-  <h2>5. Top Pop-Up Notification & Comprehensive Error Handling System</h2>
+  <h2>5. Advanced Enterprise Admin Portal & Admissions CRM</h2>
+  <p>
+    The Admin Panel was comprehensively upgraded to provide an institutional-grade control center matching the client's full operational mandate:
+  </p>
+  <div class="card-grid-2">
+    <div class="card blue-card">
+      <h4>Executive Overview & Conversion Funnel (/admin)</h4>
+      <p>• <strong>4 KPI Stat Cards:</strong> Total Enquiries, New (Pending Action), In Active Follow-up, Confirmed Admissions.</p>
+      <p>• <strong>Admission Pipeline Funnel:</strong> Visual stage progression tracking conversion from New &rarr; Contacted &rarr; In Review &rarr; Admitted.</p>
+      <p>• <strong>Campus Breakdown Widget:</strong> Live lead distribution percentages for Manmad, Chandwad, and Niphad.</p>
+      <p>• <strong>Recent Enquiries Feed:</strong> Real-time incoming leads with direct WhatsApp and Call quick action buttons.</p>
+    </div>
+    <div class="card blue-card">
+      <h4>Admission Enquiries CRM (/admin/enquiries)</h4>
+      <p>• <strong>Quick Status Tabs:</strong> Filter by All, New (Urgent), Contacted, In Review, Admitted, Closed with live badges.</p>
+      <p>• <strong>Direct WhatsApp Parent Connect:</strong> Pre-fills personalized greeting with student name, program, and campus.</p>
+      <p>• <strong>Full Profile Inspection Modal:</strong> Complete inquiry view including hostel/bus need, medium, source, message.</p>
+      <p>• <strong>Status & Counselor Notes Modal:</strong> Log counselor conversation history with instant top toast alerts.</p>
+    </div>
+  </div>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <h4>Campus Hubs (/admin/campuses)</h4>
+      <p>Full profiles for Manmad, Chandwad, and Niphad. Manage addresses, helpline contacts, intake capacity, and status with interactive edit modals.</p>
+    </div>
+    <div class="card">
+      <h4>Programs Catalog (/admin/programs)</h4>
+      <p>Centralized database of Pre-Primary, Primary, Higher Secondary, and JEE/NEET/CET competitive coaching wings with hostel/bus indicators.</p>
+    </div>
+    <div class="card">
+      <h4>Results & Testimonials (/admin/results)</h4>
+      <p>Hall of Fame manager for Board, JEE, and NEET toppers, alongside student and parent testimonials with star ratings and publish controls.</p>
+    </div>
+  </div>
+
+  <h2>6. Top Pop-Up Notification & Comprehensive Error Handling System</h2>
   <p>
     In accordance with client instructions, a robust <strong>Top Pop-up / Toast Notification Architecture</strong> and global error recovery framework has been built and deployed:
   </p>
@@ -381,7 +427,7 @@
     <li><strong>Custom 404 Route (<code>src/app/not-found.tsx</code>):</strong> Cleanly routes lost visitors back to the home portal and admission links.</li>
   </ul>
 
-  <h2>6. WhatsApp & AI Chatbot Admissions Integration</h2>
+  <h2>7. WhatsApp & AI Chatbot Admissions Integration</h2>
   <div class="card-grid-2">
     <div class="card blue-card">
       <h4>WhatsApp Integration</h4>
@@ -405,7 +451,7 @@
   <div class="page-break"></div>
 
   <!-- ==================== PAGE 3 ==================== -->
-  <h2>7. Comprehensive Security Architecture & Audit (10 / 10 Passed)</h2>
+  <h2>8. Comprehensive Security Architecture & Audit (10 / 10 Passed)</h2>
   <p>
     An enterprise security assessment was executed against the application to verify defenses against OWASP Top 10 web vulnerabilities:
   </p>
@@ -494,7 +540,7 @@
     </tbody>
   </table>
 
-  <h2>8. Backend Functionality Audit Scorecard (16 / 16 Passed)</h2>
+  <h2>9. Backend Functionality Audit Scorecard (16 / 16 Passed)</h2>
   <p>
     An automated end-to-end verification suite was executed against the live application, confirming that all endpoints operate with zero errors:
   </p>
@@ -633,7 +679,7 @@
   <div class="page-break"></div>
 
   <!-- ==================== PAGE 4 ==================== -->
-  <h2>9. SEO, Search Console Readiness & Core Web Vitals</h2>
+  <h2>10. SEO, Search Console Readiness & Core Web Vitals</h2>
   <div class="card-grid-3">
     <div class="card">
       <h4>Schema.org Structured Data</h4>
@@ -641,7 +687,7 @@
     </div>
     <div class="card">
       <h4>Search Engine Readiness</h4>
-      <p>Dynamic <code>sitemap.xml</code> and <code>robots.txt</code> routing all 32 static and dynamic pages with complete OpenGraph and Twitter card metadata.</p>
+      <p>Dynamic <code>sitemap.xml</code> and <code>robots.txt</code> routing all 36 static and dynamic pages with complete OpenGraph and Twitter card metadata.</p>
     </div>
     <div class="card">
       <h4>Core Web Vitals & Loading</h4>
@@ -649,7 +695,7 @@
     </div>
   </div>
 
-  <h2>10. Complete Inventory of Deployed Routes (32 / 32 Routes)</h2>
+  <h2>11. Complete Inventory of Deployed Routes (36 / 36 Routes)</h2>
   <table>
     <thead>
       <tr>
@@ -757,12 +803,27 @@
       <tr>
         <td><code>/admin</code></td>
         <td><span class="pill">Static</span></td>
-        <td>Institutional management overview dashboard with real-time analytics.</td>
+        <td>Executive dashboard: pipeline funnel, campus breakdown, KPI cards, recent enquiries live feed.</td>
       </tr>
       <tr>
         <td><code>/admin/enquiries</code></td>
         <td><span class="pill">Static</span></td>
-        <td>Enquiry lifecycle management table with status updating, notes, search, and CSV export.</td>
+        <td>Full CRM: status tabs, direct WhatsApp parent button, direct call, profile modal, notes update, CSV.</td>
+      </tr>
+      <tr>
+        <td><code>/admin/campuses</code></td>
+        <td><span class="pill">Static</span></td>
+        <td>Campus directory manager: view & edit addresses, intake capacities, facilities, and contact persons.</td>
+      </tr>
+      <tr>
+        <td><code>/admin/programs</code></td>
+        <td><span class="pill">Static</span></td>
+        <td>Academic programs catalog: manage streams, grades, and hostel/transport requirements.</td>
+      </tr>
+      <tr>
+        <td><code>/admin/results</code></td>
+        <td><span class="pill">Static</span></td>
+        <td>Hall of fame & testimonials manager: add/delete board toppers, percentiles, and parent reviews.</td>
       </tr>
       <tr>
         <td><code>/admin/chatbot-kb</code></td>
@@ -772,7 +833,7 @@
     </tbody>
   </table>
 
-  <h2>11. Final Delivery Verification & Operational Handover</h2>
+  <h2>12. Final Delivery Verification & Operational Handover</h2>
   <div class="card dark-card">
     <h4>Production Deployment Credentials</h4>
     <p>• <strong>Production Server:</strong> <code>http://localhost:3000</code> (Next.js 14 Production Server Running)</p>

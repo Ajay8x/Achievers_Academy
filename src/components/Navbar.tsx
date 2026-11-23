@@ -17,6 +17,8 @@ import {
   Trophy,
   Stethoscope,
   Microscope,
+  Target,
+  ClipboardList,
   Lock
 } from 'lucide-react';
 import AdmissionModal from './AdmissionModal';
@@ -232,45 +234,45 @@ export default function Navbar() {
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform group-hover:rotate-180 ${resultsOpen ? 'rotate-180' : ''}`} />
                 </button>
 
-                <div className={`absolute top-full left-0 w-56 pt-2 z-50 transition-all ${resultsOpen ? 'block' : 'hidden group-hover:block'}`}>
+                <div className={`absolute top-full left-0 w-60 pt-2 z-50 transition-all ${resultsOpen ? 'block' : 'hidden group-hover:block'}`}>
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5 animate-fade-in ring-1 ring-black/5">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2.5">
                       EXAMINATION RESULTS
                     </span>
                     <div className="space-y-1">
                       <Link
                         href="/results#cet"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                        className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-sm">🎯</span>
+                        <span className="text-base leading-none">🎯</span>
                         <span>CET Results</span>
                       </Link>
 
                       <Link
                         href="/results#neet"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                        className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-sm">🎯</span>
+                        <span className="text-base leading-none">🎯</span>
                         <span>NEET Results</span>
                       </Link>
 
                       <Link
                         href="/results#jee"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                        className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-sm">🎯</span>
+                        <span className="text-base leading-none">🎯</span>
                         <span>JEE Results</span>
                       </Link>
 
                       <Link
                         href="/results#board"
                         onClick={() => setResultsOpen(false)}
-                        className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                        className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-sm">📋</span>
+                        <span className="text-base leading-none">📋</span>
                         <span>11th–12th Results</span>
                       </Link>
                     </div>
@@ -296,37 +298,37 @@ export default function Navbar() {
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform group-hover:rotate-180 ${coursesOpen ? 'rotate-180' : ''}`} />
                 </button>
 
-                <div className={`absolute top-full left-0 w-60 pt-2 z-50 transition-all ${coursesOpen ? 'block' : 'hidden group-hover:block'}`}>
-                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5 animate-fade-in ring-1 ring-black/5 space-y-3">
+                <div className={`absolute top-full left-0 w-64 pt-2 z-50 transition-all ${coursesOpen ? 'block' : 'hidden group-hover:block'}`}>
+                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5 animate-fade-in ring-1 ring-black/5 space-y-2.5">
                       
                       {/* CLASS 11TH */}
                       <div>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5 px-2">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5 px-2.5">
                           CLASS 11TH
                         </span>
-                        <div className="space-y-1">
+                        <div className="space-y-0.5">
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#11th-cet"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/80 text-slate-800 hover:text-blue-700 text-xs font-semibold transition group/item"
                           >
-                            <Microscope className="w-3.5 h-3.5 text-blue-500" />
+                            <Microscope className="w-4 h-4 text-blue-600 shrink-0" />
                             <span>11th CET</span>
                           </Link>
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#11th-jee"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/80 text-slate-800 hover:text-purple-700 text-xs font-semibold transition group/item"
                           >
-                            <Atom className="w-3.5 h-3.5 text-purple-600" />
+                            <Atom className="w-4 h-4 text-purple-600 shrink-0" />
                             <span>11th JEE</span>
                           </Link>
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#11th-neet"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/80 text-slate-800 hover:text-rose-600 text-xs font-semibold transition group/item"
                           >
-                            <Stethoscope className="w-3.5 h-3.5 text-rose-500" />
+                            <Stethoscope className="w-4 h-4 text-rose-500 shrink-0" />
                             <span>11th NEET</span>
                           </Link>
                         </div>
@@ -334,32 +336,32 @@ export default function Navbar() {
 
                       {/* CLASS 12TH */}
                       <div className="pt-2 border-t border-slate-100">
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5 px-2">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5 px-2.5">
                           CLASS 12TH
                         </span>
-                        <div className="space-y-1">
+                        <div className="space-y-0.5">
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#12th-cet"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl bg-blue-50/90 text-blue-700 text-xs font-bold transition group/item hover:bg-blue-100"
                           >
-                            <Microscope className="w-3.5 h-3.5 text-blue-500" />
+                            <Microscope className="w-4 h-4 text-blue-600 shrink-0" />
                             <span>12th CET</span>
                           </Link>
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#12th-jee"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/80 text-slate-800 hover:text-purple-700 text-xs font-semibold transition group/item"
                           >
-                            <Atom className="w-3.5 h-3.5 text-purple-600" />
+                            <Atom className="w-4 h-4 text-purple-600 shrink-0" />
                             <span>12th JEE</span>
                           </Link>
                           <Link
-                            href="/programs/competitive-exams"
+                            href="/programs/competitive-exams#12th-neet"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl hover:bg-slate-50 text-slate-700 hover:text-navy-950 text-xs font-semibold transition"
+                            className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/80 text-slate-800 hover:text-rose-600 text-xs font-semibold transition group/item"
                           >
-                            <Stethoscope className="w-3.5 h-3.5 text-rose-500" />
+                            <Stethoscope className="w-4 h-4 text-rose-500 shrink-0" />
                             <span>12th NEET</span>
                           </Link>
                         </div>
@@ -443,52 +445,113 @@ export default function Navbar() {
             >
               About
             </Link>
-            <div className="space-y-1">
-              <Link
-                href="/results"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 rounded-xl font-bold text-navy-950 hover:bg-slate-50"
-              >
-                Results
-              </Link>
-              <div className="pl-4 space-y-1">
+            {/* Examination Results Mobile Section */}
+            <div className="space-y-1 bg-slate-50 p-2.5 rounded-2xl border border-slate-100">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block px-2 mb-1">
+                EXAMINATION RESULTS
+              </span>
+              <div className="space-y-0.5">
                 <Link
                   href="/results#cet"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                  className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  🎯 CET Results
+                  <span className="text-sm">🎯</span>
+                  <span>CET Results</span>
                 </Link>
                 <Link
                   href="/results#neet"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                  className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  🎯 NEET Results
+                  <span className="text-sm">🎯</span>
+                  <span>NEET Results</span>
                 </Link>
                 <Link
                   href="/results#jee"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                  className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  🎯 JEE Results
+                  <span className="text-sm">🎯</span>
+                  <span>JEE Results</span>
                 </Link>
                 <Link
                   href="/results#board"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-1 text-xs text-slate-600 hover:text-navy-950"
+                  className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  📋 11th–12th Results
+                  <span className="text-sm">📋</span>
+                  <span>11th–12th Results</span>
                 </Link>
               </div>
             </div>
-            <Link
-              href="/programs/competitive-exams"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-xl font-bold text-navy-950 hover:bg-slate-50"
-            >
-              Courses (11th &amp; 12th CET, JEE, NEET)
-            </Link>
+
+            {/* Courses Mobile Section (Class 11th & Class 12th) */}
+            <div className="space-y-2.5 bg-slate-50 p-2.5 rounded-2xl border border-slate-100">
+              <div>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block px-2 mb-1">
+                  CLASS 11TH
+                </span>
+                <div className="space-y-0.5">
+                  <Link
+                    href="/programs/competitive-exams#11th-cet"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
+                  >
+                    <Microscope className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span>11th CET</span>
+                  </Link>
+                  <Link
+                    href="/programs/competitive-exams#11th-jee"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-purple-600 hover:bg-white font-semibold transition"
+                  >
+                    <Atom className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                    <span>11th JEE</span>
+                  </Link>
+                  <Link
+                    href="/programs/competitive-exams#11th-neet"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-rose-600 hover:bg-white font-semibold transition"
+                  >
+                    <Stethoscope className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+                    <span>11th NEET</span>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-200/60">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block px-2 mb-1">
+                  CLASS 12TH
+                </span>
+                <div className="space-y-0.5">
+                  <Link
+                    href="/programs/competitive-exams#12th-cet"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-blue-700 bg-blue-100/70 font-bold transition"
+                  >
+                    <Microscope className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span>12th CET</span>
+                  </Link>
+                  <Link
+                    href="/programs/competitive-exams#12th-jee"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-purple-600 hover:bg-white font-semibold transition"
+                  >
+                    <Atom className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                    <span>12th JEE</span>
+                  </Link>
+                  <Link
+                    href="/programs/competitive-exams#12th-neet"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-rose-600 hover:bg-white font-semibold transition"
+                  >
+                    <Stethoscope className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+                    <span>12th NEET</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link
               href="/campuses"
               onClick={() => setMobileMenuOpen(false)}

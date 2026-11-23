@@ -421,6 +421,25 @@ export const db = {
     return ensureDb().results;
   },
 
+  addResult(r: Omit<ResultHighlight, 'id'>): ResultHighlight {
+    const data = ensureDb();
+    const item: ResultHighlight = { ...r, id: `res-${Date.now()}` };
+    data.results.unshift(item);
+    writeDb(data);
+    return item;
+  },
+
+  deleteResult(id: string): boolean {
+    const data = ensureDb();
+    const filtered = data.results.filter(r => r.id !== id);
+    if (filtered.length !== data.results.length) {
+      data.results = filtered;
+      writeDb(data);
+      return true;
+    }
+    return false;
+  },
+
   // Chatbot KB
   getKB(): ChatbotKBItem[] {
     return ensureDb().chatbotKB;

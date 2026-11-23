@@ -304,20 +304,18 @@ export default function AIChatbot() {
           </div>
         )}
 
-        {/* Trigger Button */}
+        {/* Trigger Button - Compact Pill showing ONLY icon + "AI" matching user image */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="AI Admission Assistant"
-          className="group relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-black via-[#0B1B3D] to-black hover:from-slate-950 hover:to-slate-950 text-white rounded-full shadow-sm border border-blue-400/80 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-blue-pulse"
+          className="group relative flex items-center gap-2 pl-2 pr-3.5 py-1.5 bg-[#070E1E] hover:bg-black text-white rounded-full shadow-lg border border-blue-500/60 hover:border-blue-400 transition-all duration-300 transform hover:scale-105 active:scale-95 glow-blue-pulse"
         >
-          <div className="relative w-5 h-5 rounded-full bg-blue-500/20 border border-blue-400/60 flex items-center justify-center shrink-0">
-            <Bot className="w-3 h-3 text-blue-300 group-hover:rotate-12 transition-transform duration-300" />
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping"></span>
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-blue-400 rounded-full ring-1 ring-black"></span>
+          <div className="relative w-6 h-6 rounded-full bg-blue-500/10 border border-blue-400/90 flex items-center justify-center shrink-0">
+            <Bot className="w-3.5 h-3.5 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-blue-400 rounded-full border border-[#070E1E]"></span>
           </div>
-          <span className="text-xs font-bold tracking-wide text-white drop-shadow-sm flex items-center gap-1">
-            <span>AI Counselor</span>
-            <span className="text-[9px] bg-blue-500/30 text-blue-200 px-1 rounded">EN/हिन्दी</span>
+          <span className="text-sm font-bold tracking-wider text-white drop-shadow-sm font-sans">
+            AI
           </span>
         </button>
       </div>

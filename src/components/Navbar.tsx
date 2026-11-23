@@ -83,40 +83,49 @@ export default function Navbar() {
                 <span className="text-slate-300">8999542174</span>
               </a>
 
-              {/* Social Circles */}
-              <div className="flex items-center gap-2">
+              {/* Social Circles with Font Awesome */}
+              <div className="flex items-center gap-1.5">
+                <a
+                  href="https://wa.me/918459360161"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#25D366] text-white flex items-center justify-center text-[11px] transition transform hover:scale-110"
+                >
+                  <i className="fa-brands fa-whatsapp"></i>
+                </a>
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center text-xs font-bold transition"
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center text-[11px] transition transform hover:scale-110"
                 >
-                  f
+                  <i className="fa-brands fa-facebook-f"></i>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#0A66C2] text-white flex items-center justify-center text-xs font-bold transition"
+                  aria-label="Instagram"
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:to-rose-600 text-white flex items-center justify-center text-[11px] transition transform hover:scale-110"
                 >
-                  in
+                  <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://youtube.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Twitter / X"
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-black text-white flex items-center justify-center text-xs font-bold transition"
+                  aria-label="YouTube"
+                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#FF0000] text-white flex items-center justify-center text-[11px] transition transform hover:scale-110"
                 >
-                  𝕏
+                  <i className="fa-brands fa-youtube"></i>
                 </a>
 
                 {/* Admin Quick Portal */}
                 <Link
                   href="/admin"
-                  className="ml-1 text-slate-400 hover:text-white transition"
+                  className="ml-1 p-1 rounded-md text-slate-400 hover:text-amber-400 transition"
                   title="Admin Portal"
                 >
                   <Lock className="w-3.5 h-3.5 text-amber-400" />
@@ -245,7 +254,7 @@ export default function Navbar() {
                         onClick={() => setResultsOpen(false)}
                         className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-base leading-none">🎯</span>
+                        <i className="fa-solid fa-bullseye text-rose-500 text-sm group-hover/item:scale-110 transition-transform"></i>
                         <span>CET Results</span>
                       </Link>
 
@@ -254,7 +263,7 @@ export default function Navbar() {
                         onClick={() => setResultsOpen(false)}
                         className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-base leading-none">🎯</span>
+                        <i className="fa-solid fa-bullseye text-rose-500 text-sm group-hover/item:scale-110 transition-transform"></i>
                         <span>NEET Results</span>
                       </Link>
 
@@ -263,7 +272,7 @@ export default function Navbar() {
                         onClick={() => setResultsOpen(false)}
                         className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-base leading-none">🎯</span>
+                        <i className="fa-solid fa-bullseye text-rose-500 text-sm group-hover/item:scale-110 transition-transform"></i>
                         <span>JEE Results</span>
                       </Link>
 
@@ -272,7 +281,7 @@ export default function Navbar() {
                         onClick={() => setResultsOpen(false)}
                         className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-blue-50/70 text-slate-700 hover:text-navy-950 text-xs font-semibold transition group/item"
                       >
-                        <span className="text-base leading-none">📋</span>
+                        <i className="fa-solid fa-clipboard-list text-amber-500 text-sm group-hover/item:scale-110 transition-transform"></i>
                         <span>11th–12th Results</span>
                       </Link>
                     </div>
@@ -456,7 +465,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  <span className="text-sm">🎯</span>
+                  <i className="fa-solid fa-bullseye text-rose-500 text-xs"></i>
                   <span>CET Results</span>
                 </Link>
                 <Link
@@ -464,7 +473,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  <span className="text-sm">🎯</span>
+                  <i className="fa-solid fa-bullseye text-rose-500 text-xs"></i>
                   <span>NEET Results</span>
                 </Link>
                 <Link
@@ -472,7 +481,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  <span className="text-sm">🎯</span>
+                  <i className="fa-solid fa-bullseye text-rose-500 text-xs"></i>
                   <span>JEE Results</span>
                 </Link>
                 <Link
@@ -480,7 +489,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-xs text-slate-700 hover:text-blue-600 hover:bg-white font-semibold transition"
                 >
-                  <span className="text-sm">📋</span>
+                  <i className="fa-solid fa-clipboard-list text-amber-500 text-xs"></i>
                   <span>11th–12th Results</span>
                 </Link>
               </div>

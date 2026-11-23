@@ -105,33 +105,61 @@ export default function HomePage() {
           {/* Floating Admission Highlights on Hero */}
           <div className="absolute bottom-6 sm:bottom-12 left-0 right-0 z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-black/85 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 text-white max-w-2xl shadow-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-semibold mb-3">
+              <div className="bg-black/85 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 text-white max-w-2xl shadow-2xl relative overflow-hidden">
+                {/* Background soft glow inside hero card */}
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-blue-600/30 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/25 border border-blue-400/40 text-blue-300 text-xs font-semibold mb-3">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                   <Sparkles className="w-3.5 h-3.5 text-blue-300" />
                   <span>Admissions Open for Academic Year 2025-26</span>
                 </div>
-                <h1 className="text-2xl sm:text-4xl font-bold font-serif leading-tight text-white">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight text-white">
                   Achievers Group of Institutes
                 </h1>
-                <p className="text-xs sm:text-sm text-slate-200 mt-2 max-w-xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-200 mt-3 max-w-xl leading-relaxed">
                   Transforming rural education into global leadership across 3 world-class campuses: Manmad, Chandwad, and Niphad.
                 </p>
-                <div className="mt-5 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap gap-3">
                   <button
                     onClick={() => openAdmission('Achievers World School (Manmad)')}
-                    className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5"
+                    className="btn-shimmer px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs sm:text-sm shadow-xl shadow-blue-600/30 transition transform hover:-translate-y-0.5 flex items-center gap-2"
                   >
-                    Apply for Admission 2025-26
+                    <i className="fa-solid fa-paper-plane text-xs text-blue-200"></i>
+                    <span>Apply for Admission 2025-26</span>
                   </button>
                   <Link
                     href="/campuses"
-                    className="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5"
+                    className="px-5 py-3 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold rounded-xl text-xs sm:text-sm transition flex items-center gap-2 backdrop-blur-sm"
                   >
+                    <i className="fa-solid fa-compass text-xs text-blue-300"></i>
                     <span>Explore Campuses</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Top-Right Floating Achievement Badge with Font Awesome */}
+          <div className="absolute top-8 right-6 sm:right-12 z-20 hidden md:flex items-center gap-3 px-4 py-3 bg-black/80 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl animate-float-bob">
+            <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-lg shadow-md">
+              <i className="fa-solid fa-trophy text-amber-950"></i>
+            </div>
+            <div>
+              <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">Historic Distinction</span>
+              <span className="text-xs font-bold text-white">100% HSC Board Pass</span>
+            </div>
+          </div>
+
+          {/* Middle-Right Floating Entrance Prep Badge with Font Awesome */}
+          <div className="absolute top-28 right-6 sm:right-12 z-20 hidden lg:flex items-center gap-3 px-4 py-3 bg-blue-950/85 backdrop-blur-md rounded-2xl border border-blue-400/40 shadow-2xl animate-float-reverse">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md">
+              <i className="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <span className="text-[10px] font-bold text-blue-300 uppercase tracking-widest block">Chandwad Flagship Hub</span>
+              <span className="text-xs font-bold text-white">99.45 %ile JEE Main &bull; NEET GMC</span>
             </div>
           </div>
         </div>
@@ -141,27 +169,31 @@ export default function HomePage() {
       {/* =========================================================================
           2. ABOUT US: "Nurturing Rural Education"
          ========================================================================= */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-20 sm:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="inline-block px-3.5 py-1 text-xs font-bold tracking-wider uppercase text-amber-800 bg-amber-100 rounded-full">
-                About Us
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold tracking-wider uppercase text-blue-800 bg-blue-50 border border-blue-200/80 rounded-full">
+                <i className="fa-solid fa-shield-halved text-blue-600"></i>
+                <span>About Achievers Academy</span>
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-navy-950 leading-tight">
-                Nurturing <span className="italic text-amber-600 font-serif">Rural Education</span>
+                Nurturing <span className="text-gradient-blue font-serif">Rural Education</span> Into Global Excellence
               </h2>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Achievers Group of Institutes was established with a visionary mission: to eliminate the educational divide between metropolitan cities and rural India. By bringing modern CBSE curricula, Kota-standard competitive exam faculty, high-tech science laboratories, and disciplined residential hostels to Nashik district, we empower rural and suburban students to excel at the highest national levels.
               </p>
 
-              {/* 3 Stat Boxes in a Row */}
+              {/* 3 Stat Boxes in a Row with Font Awesome Icons */}
               <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
-                <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/70 border border-amber-200/60 text-center sm:text-left transition hover:shadow-sm">
+                <div className="card-interactive p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 text-center sm:text-left transition">
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center mb-2 mx-auto sm:mx-0">
+                    <i className="fa-solid fa-user-graduate text-sm"></i>
+                  </div>
                   <span className="block text-2xl sm:text-3xl font-extrabold text-navy-950 font-serif">
                     18,000+
                   </span>
@@ -170,7 +202,10 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/70 border border-amber-200/60 text-center sm:text-left transition hover:shadow-sm">
+                <div className="card-interactive p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 text-center sm:text-left transition">
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center mb-2 mx-auto sm:mx-0">
+                    <i className="fa-solid fa-chalkboard-user text-sm"></i>
+                  </div>
                   <span className="block text-2xl sm:text-3xl font-extrabold text-amber-600 font-serif">
                     200+
                   </span>
@@ -179,7 +214,10 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/70 border border-amber-200/60 text-center sm:text-left transition hover:shadow-sm">
+                <div className="card-interactive p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 text-center sm:text-left transition">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center mb-2 mx-auto sm:mx-0">
+                    <i className="fa-solid fa-award text-sm"></i>
+                  </div>
                   <span className="block text-2xl sm:text-3xl font-extrabold text-navy-950 font-serif">
                     15+
                   </span>
@@ -193,10 +231,10 @@ export default function HomePage() {
               <div className="pt-2">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-xl text-xs sm:text-sm transition shadow-sm"
+                  className="btn-shimmer inline-flex items-center gap-2 px-6 py-3 bg-navy-950 hover:bg-blue-900 text-white font-bold rounded-xl text-xs sm:text-sm transition shadow-md"
                 >
-                  <span>Read More</span>
-                  <ArrowRight className="w-4 h-4 text-gold-400" />
+                  <span>Discover Our Journey</span>
+                  <i className="fa-solid fa-arrow-right text-xs text-amber-400"></i>
                 </Link>
               </div>
             </div>
@@ -232,10 +270,14 @@ export default function HomePage() {
       {/* =========================================================================
           3. "What You Want to Explore Our Institutes": 3 Campus Cards
          ========================================================================= */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 bg-slate-50 border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 tracking-wider uppercase mb-3">
+              <i className="fa-solid fa-school text-blue-600 text-[11px]"></i>
+              Our Campus Network
+            </span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-navy-950">
               What You Want to <span className="italic text-blue-600 font-serif">Explore Our Institutes</span>
             </h2>
@@ -247,20 +289,22 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Campus Card 1: Manmad */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between group">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between group">
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
                     src="/images/static_achivers.jpg"
                     alt="Achievers World School Manmad"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-600 text-white shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-600 text-white shadow-md uppercase tracking-wider flex items-center gap-1.5">
+                      <i className="fa-solid fa-award text-[10px] text-amber-300"></i>
                       CBSE Pattern
                     </span>
                   </div>
-                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md">
+                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md flex items-center gap-1.5">
+                    <i className="fa-solid fa-location-dot text-amber-400 text-xs"></i>
                     Manmad Campus
                   </div>
                 </div>
@@ -270,7 +314,7 @@ export default function HomePage() {
                     Achievers World School – Manmad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <i className="fa-solid fa-map-pin text-blue-600 shrink-0 text-xs"></i>
                     <span>Shrinath Dream City, Umrane Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -282,29 +326,36 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/achievers-world-school-manmad"
-                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md group/btn"
                 >
                   <span>Explore Campus</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[11px] group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
 
             {/* Campus Card 2: Chandwad */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border-2 border-blue-600/40 shadow-md flex flex-col justify-between group">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border-2 border-blue-600/50 shadow-md flex flex-col justify-between group relative ring-4 ring-blue-500/10">
+              <div className="absolute -top-3 right-6 z-20">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                  ★ Flagship Science Hub
+                </span>
+              </div>
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
                     src="/images/static_Chandwad.jpeg"
                     alt="Achievers IIT & Medical Chandwad"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-900 text-white shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-navy-950 text-white shadow-md uppercase tracking-wider flex items-center gap-1.5">
+                      <i className="fa-solid fa-flask-vial text-[10px] text-blue-400"></i>
                       IIT-JEE / NEET
                     </span>
                   </div>
-                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md">
+                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md flex items-center gap-1.5">
+                    <i className="fa-solid fa-location-dot text-amber-400 text-xs"></i>
                     Chandwad Campus
                   </div>
                 </div>
@@ -314,7 +365,7 @@ export default function HomePage() {
                     Achievers IIT &amp; Medical – Chandwad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <i className="fa-solid fa-map-pin text-blue-600 shrink-0 text-xs"></i>
                     <span>Opp. Indian Oil Petrol Pump, Manmad Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -326,29 +377,31 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/achievers-iit-medical-chandwad"
-                  className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md group/btn"
                 >
                   <span>Explore Campus</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[11px] group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
 
             {/* Campus Card 3: Niphad */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between group">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between group">
               <div>
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
                     src="/images/static_Niphad.jpeg"
                     alt="Wisdom International School Niphad"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900 text-white shadow-sm uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-slate-900 text-white shadow-md uppercase tracking-wider flex items-center gap-1.5">
+                      <i className="fa-solid fa-book-open text-[10px] text-amber-300"></i>
                       CBSE Board
                     </span>
                   </div>
-                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md">
+                  <div className="absolute bottom-3 left-4 text-white text-xs font-semibold drop-shadow-md flex items-center gap-1.5">
+                    <i className="fa-solid fa-location-dot text-amber-400 text-xs"></i>
                     Niphad Campus
                   </div>
                 </div>
@@ -358,7 +411,7 @@ export default function HomePage() {
                     Wisdom International School – Niphad
                   </h3>
                   <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <i className="fa-solid fa-map-pin text-blue-600 shrink-0 text-xs"></i>
                     <span>Niphad-Sambhajinagar Road</span>
                   </p>
                   <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
@@ -370,10 +423,10 @@ export default function HomePage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/campuses/wisdom-international-school-niphad"
-                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-4 bg-navy-950 hover:bg-blue-600 text-white font-bold rounded-xl text-xs transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md group/btn"
                 >
                   <span>Explore Campus</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[11px] group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
@@ -386,14 +439,18 @@ export default function HomePage() {
       {/* =========================================================================
           4. "Explore Our Residential Facilities": Deep Navy Section
          ========================================================================= */}
-      <section className="py-20 sm:py-24 bg-[#0B1E3D] text-white relative overflow-hidden">
-        {/* Glow backdrop */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <section className="py-20 sm:py-24 bg-[#070E1E] text-white relative overflow-hidden">
+        {/* Glow backdrop with subtle animated pulse */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-glow-aura"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none animate-glow-aura" style={{ animationDelay: '2.5s' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 text-amber-300 border border-white/10 uppercase tracking-widest mb-3 backdrop-blur-sm">
+              <i className="fa-solid fa-house-chimney text-amber-400"></i>
+              Safe &amp; Modern Campus Living
+            </span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white">
               Explore Our <span className="italic text-amber-400 font-serif">Residential Facilities</span>
             </h2>
@@ -405,13 +462,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Bus Facility Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-navy-900/80 border border-white/10 backdrop-blur-md shadow-2xl flex flex-col justify-between">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-amber-400/40 backdrop-blur-md shadow-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-amber-500/5 group">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-400 flex items-center justify-center mb-6">
-                  <Bus className="w-7 h-7" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-400/40 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <i className="fa-solid fa-bus text-2xl"></i>
                 </div>
 
-                <h3 className="text-2xl font-bold font-serif text-white">
+                <h3 className="text-2xl font-bold font-serif text-white group-hover:text-amber-300 transition">
                   Bus Facility
                 </h3>
 
@@ -419,25 +476,25 @@ export default function HomePage() {
                   Safe, reliable, and GPS-tracked transportation network covering all major rural and urban routes across Nashik district.
                 </p>
 
-                <div className="mt-6 space-y-3 border-t border-white/10 pt-6">
+                <div className="mt-6 space-y-3.5 border-t border-white/10 pt-6">
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>GPS-Enabled Live Vehicle Tracking for Parents</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Experienced, Licensed &amp; Police-Verified Drivers</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Female Attendants for Pre-Primary &amp; Junior Students</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Extensive Coverage: Manmad, Chandwad, Niphad &amp; Villages</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Strict On-Time Arrival &amp; Route Safety Audits</span>
                   </div>
                 </div>
@@ -446,21 +503,22 @@ export default function HomePage() {
               <div className="pt-8">
                 <Link
                   href="/facilities/transport"
-                  className="inline-block px-7 py-3 bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold rounded-xl text-xs sm:text-sm transition shadow-lg"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-navy-950 font-bold rounded-xl text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-amber-500/20 group/btn"
                 >
-                  Explore More
+                  <span>Explore Bus Routes</span>
+                  <i className="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
 
             {/* Hostel Facility Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-navy-900/80 border border-white/10 backdrop-blur-md shadow-2xl flex flex-col justify-between">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-blue-400/40 backdrop-blur-md shadow-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-blue-500/5 group">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-blue-500/20 border border-blue-400/40 text-blue-400 flex items-center justify-center mb-6">
-                  <Building2 className="w-7 h-7" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-400/40 text-blue-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <i className="fa-solid fa-hotel text-2xl"></i>
                 </div>
 
-                <h3 className="text-2xl font-bold font-serif text-white">
+                <h3 className="text-2xl font-bold font-serif text-white group-hover:text-blue-300 transition">
                   Hostel Facility
                 </h3>
 
@@ -468,25 +526,25 @@ export default function HomePage() {
                   Home away from home with disciplined atmosphere, hygienic food, 24x7 security, and supervised evening study hours.
                 </p>
 
-                <div className="mt-6 space-y-3 border-t border-white/10 pt-6">
+                <div className="mt-6 space-y-3.5 border-t border-white/10 pt-6">
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Separate Secure Hostels for Boys &amp; Girls</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Nutritious &amp; Pure Vegetarian Mess (4 Fresh Meals Daily)</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>24x7 Resident Wardens, CCTV Surveillance &amp; Guards</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>Supervised Night Study &amp; Dedicated Reading Rooms</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <i className="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
                     <span>RO Purified Drinking Water &amp; 24x7 Power Backup</span>
                   </div>
                 </div>
@@ -495,9 +553,10 @@ export default function HomePage() {
               <div className="pt-8">
                 <Link
                   href="/facilities/hostel"
-                  className="inline-block px-7 py-3 bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold rounded-xl text-xs sm:text-sm transition shadow-lg"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 group/btn"
                 >
-                  Explore More
+                  <span>Explore Hostel Life</span>
+                  <i className="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
@@ -510,10 +569,14 @@ export default function HomePage() {
       {/* =========================================================================
           5. "Explore Our Learning Ecosystem": 3 Programs + 4 Quick Cards
          ========================================================================= */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-20 sm:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 tracking-wider uppercase mb-3">
+              <i className="fa-solid fa-graduation-cap text-amber-600 text-[11px]"></i>
+              Academic Pathways
+            </span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-navy-950">
               Explore Our <span className="italic text-amber-600 font-serif">Learning Ecosystem</span>
             </h2>
@@ -526,39 +589,40 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             
             {/* Stage 1: Primary */}
-            <div className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+            <div className="card-interactive bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 p-6 flex flex-col justify-between group">
               <div>
                 <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 bg-white">
                   <img
                     src="/images/static_Gallery_Classroom_Jr._KG_img1.jpg"
                     alt="Primary Education Classroom"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-white uppercase tracking-wider">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500 text-white uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                      <i className="fa-solid fa-shapes text-[9px]"></i>
                       Foundation
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold font-serif text-navy-950">
+                <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-amber-600 transition">
                   Primary
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                   Nurturing curiosity, foundational literacy, numeracy, and social confidence in an active and joyful environment.
                 </p>
 
-                <div className="mt-4 space-y-2 text-xs text-slate-700">
+                <div className="mt-4 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Foundational Learning &amp; Phonetics</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Activity-Based Sensory Curriculum</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Holistic Care &amp; Individual Guidance</span>
                   </div>
                 </div>
@@ -567,48 +631,49 @@ export default function HomePage() {
               <div className="pt-6">
                 <Link
                   href="/programs/pre-primary"
-                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1 transition"
+                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1.5 transition group/link"
                 >
                   <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[10px] group-link-hover:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
 
             {/* Stage 2: Primary to Secondary */}
-            <div className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+            <div className="card-interactive bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 p-6 flex flex-col justify-between group">
               <div>
                 <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 bg-white">
                   <img
                     src="/images/static_achivers.jpg"
                     alt="Primary to Secondary Education"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-navy-900 text-gold-300 uppercase tracking-wider">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-navy-900 text-gold-300 uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                      <i className="fa-solid fa-book text-[9px]"></i>
                       CBSE / State
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold font-serif text-navy-950">
+                <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-blue-600 transition">
                   Primary to Secondary
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                   Academic rigour, STEM education, conceptual learning, and leadership skills for middle and high school students.
                 </p>
 
-                <div className="mt-4 space-y-2 text-xs text-slate-700">
+                <div className="mt-4 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>CBSE &amp; State Board Curricula</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Modern Science &amp; Computer Coding Labs</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Sports, Cultural Arts &amp; Personality Growth</span>
                   </div>
                 </div>
@@ -617,48 +682,49 @@ export default function HomePage() {
               <div className="pt-6">
                 <Link
                   href="/programs/primary-secondary"
-                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1 transition"
+                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1.5 transition group/link"
                 >
                   <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[10px] group-link-hover:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
 
             {/* Stage 3: Higher Secondary */}
-            <div className="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+            <div className="card-interactive bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 p-6 flex flex-col justify-between group">
               <div>
                 <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 bg-white">
                   <img
                     src="/images/static_Gallery_Chemistry_Lab_Day_view_1_-_Photo.jpg"
                     alt="Higher Secondary Science Education"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-700 text-white uppercase tracking-wider">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-600 text-white uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                      <i className="fa-solid fa-atom text-[9px]"></i>
                       Competitive
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold font-serif text-navy-950">
+                <h3 className="text-xl font-bold font-serif text-navy-950 group-hover:text-blue-600 transition">
                   Higher Secondary
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                   Rigorous 11th &amp; 12th Science curriculum integrated with Kota faculty coaching for JEE, NEET, and MHT-CET.
                 </p>
 
-                <div className="mt-4 space-y-2 text-xs text-slate-700">
+                <div className="mt-4 space-y-2.5 text-xs text-slate-700">
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Science Stream (PCM &amp; PCB)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Integrated Board + Entrance Exam Coaching</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <i className="fa-solid fa-check text-amber-600 text-xs shrink-0"></i>
                     <span>Weekly All-India Tests &amp; Doubt Resolution</span>
                   </div>
                 </div>
@@ -667,10 +733,10 @@ export default function HomePage() {
               <div className="pt-6">
                 <Link
                   href="/programs/higher-secondary"
-                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1 transition"
+                  className="text-xs font-bold text-amber-600 hover:text-navy-950 flex items-center gap-1.5 transition group/link"
                 >
                   <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="fa-solid fa-arrow-right text-[10px] group-link-hover:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
@@ -683,41 +749,47 @@ export default function HomePage() {
             {/* Quick Card 1: Campus Infrastructure */}
             <Link
               href="/campuses"
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition aspect-square sm:aspect-auto sm:h-48 flex items-end p-4 bg-slate-100"
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 aspect-square sm:aspect-auto sm:h-48 flex items-end p-4 bg-slate-100"
             >
               <img
                 src="/images/static_Gallery_infra_1.jpg"
                 alt="Campus Infrastructure"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
               <div className="relative z-10 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">Tour</span>
-                <span className="font-bold text-sm sm:text-base font-serif">Campus Infrastructure</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                  <i className="fa-solid fa-compass text-[9px]"></i>
+                  Tour
+                </span>
+                <span className="font-bold text-sm sm:text-base font-serif block mt-0.5">Campus Infrastructure</span>
               </div>
             </Link>
 
             {/* Quick Card 2: Accreditations */}
             <Link
               href="/accreditations"
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition aspect-square sm:aspect-auto sm:h-48 flex items-end p-4 bg-slate-100"
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 aspect-square sm:aspect-auto sm:h-48 flex items-end p-4 bg-slate-100"
             >
               <img
                 src="/images/static_Accreditations.jpg"
                 alt="Accreditations & Certificates"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent"></div>
               <div className="relative z-10 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">Official</span>
-                <span className="font-bold text-sm sm:text-base font-serif">Accreditations</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                  <i className="fa-solid fa-certificate text-[9px]"></i>
+                  Official
+                </span>
+                <span className="font-bold text-sm sm:text-base font-serif block mt-0.5">Accreditations</span>
               </div>
             </Link>
 
             {/* Quick Card 3: Results */}
             <Link
               href="/results"
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition aspect-square sm:aspect-auto sm:h-48 flex items-center justify-center p-4 bg-amber-50"
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 aspect-square sm:aspect-auto sm:h-48 flex items-center justify-center p-4 bg-amber-50/50 hover:bg-amber-100/50"
             >
               <img
                 src="/images/static_result.jpg"
@@ -729,7 +801,7 @@ export default function HomePage() {
             {/* Quick Card 4: Admission Open */}
             <button
               onClick={() => openAdmission('Achievers World School (Manmad)')}
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition aspect-square sm:aspect-auto sm:h-48 flex items-center justify-center p-4 bg-white"
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 aspect-square sm:aspect-auto sm:h-48 flex items-center justify-center p-4 bg-white hover:bg-blue-50/30"
             >
               <img
                 src="/images/static_admission.png"
@@ -750,6 +822,10 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 tracking-wider uppercase mb-3">
+            <i className="fa-solid fa-shield-halved text-blue-600 text-[11px]"></i>
+            Apex Standards
+          </span>
           <h2 className="text-2xl sm:text-3xl font-bold font-serif text-navy-950 mb-3">
             Accreditations &amp; Recognition
           </h2>
@@ -759,35 +835,35 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
             
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center hover:shadow-md transition">
-              <div className="h-16 w-16 flex items-center justify-center mb-3">
+            <div className="card-interactive p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col items-center group">
+              <div className="h-16 w-16 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <img src="/images/images_accreditations_6.jpg" alt="CBSE Board" className="max-h-full object-contain" />
               </div>
-              <h4 className="font-bold text-navy-950 text-xs sm:text-sm">CBSE Affiliation</h4>
+              <h4 className="font-bold text-navy-950 text-xs sm:text-sm group-hover:text-blue-600 transition">CBSE Affiliation</h4>
               <p className="text-[10px] text-slate-500 mt-0.5">Central Board of Secondary Education</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center hover:shadow-md transition">
-              <div className="h-16 w-16 flex items-center justify-center mb-3">
+            <div className="card-interactive p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col items-center group">
+              <div className="h-16 w-16 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <img src="/images/images_accreditations_5.jpg" alt="Maharashtra State Board" className="max-h-full object-contain" />
               </div>
-              <h4 className="font-bold text-navy-950 text-xs sm:text-sm">Maharashtra HSC &amp; SSC</h4>
+              <h4 className="font-bold text-navy-950 text-xs sm:text-sm group-hover:text-blue-600 transition">Maharashtra HSC &amp; SSC</h4>
               <p className="text-[10px] text-slate-500 mt-0.5">State Board of Secondary Education</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center hover:shadow-md transition">
-              <div className="h-16 w-16 flex items-center justify-center mb-3">
+            <div className="card-interactive p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col items-center group">
+              <div className="h-16 w-16 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <img src="/images/static_msbte.jfif" alt="MSBTE Approved" className="max-h-full object-contain" />
               </div>
-              <h4 className="font-bold text-navy-950 text-xs sm:text-sm">MSBTE Approved</h4>
+              <h4 className="font-bold text-navy-950 text-xs sm:text-sm group-hover:text-blue-600 transition">MSBTE Approved</h4>
               <p className="text-[10px] text-slate-500 mt-0.5">Technical Education Board</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center hover:shadow-md transition">
-              <div className="h-16 w-16 flex items-center justify-center mb-3">
+            <div className="card-interactive p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col items-center group">
+              <div className="h-16 w-16 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <img src="/images/static_pci.jfif" alt="PCI Recognized" className="max-h-full object-contain" />
               </div>
-              <h4 className="font-bold text-navy-950 text-xs sm:text-sm">PCI Recognized</h4>
+              <h4 className="font-bold text-navy-950 text-xs sm:text-sm group-hover:text-blue-600 transition">PCI Recognized</h4>
               <p className="text-[10px] text-slate-500 mt-0.5">Pharmacy Council of India</p>
             </div>
 
@@ -797,20 +873,21 @@ export default function HomePage() {
 
 
       {/* =========================================================================
-          7. "From Vision to Victory: 100% Exam Success!" + 4 TOPPER CARDS
+          7. "From Vision to Victory: 100% Exam Success!" + 3 TOPPER CARDS
          ========================================================================= */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-20 sm:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Victory Banner */}
-          <div className="relative rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 p-8 sm:p-12 mb-14 text-navy-950 overflow-hidden shadow-lg">
-            <div className="absolute right-4 -bottom-6 text-navy-950/10 pointer-events-none">
-              <Trophy className="w-56 h-56" />
+          <div className="relative rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 p-8 sm:p-12 mb-14 text-navy-950 overflow-hidden shadow-xl border border-amber-300">
+            <div className="absolute right-4 -bottom-6 text-navy-950/10 pointer-events-none text-9xl">
+              <i className="fa-solid fa-trophy"></i>
             </div>
 
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
               <div>
-                <span className="text-xs uppercase font-extrabold tracking-widest text-navy-950/80 block mb-1">
+                <span className="text-xs uppercase font-extrabold tracking-widest text-navy-950/80 block mb-1 flex items-center gap-1.5">
+                  <i className="fa-solid fa-medal text-navy-950"></i>
                   Academic Milestones
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-extrabold font-serif text-navy-950">
@@ -832,10 +909,11 @@ export default function HomePage() {
               <div>
                 <Link
                   href="/results"
-                  className="btn-shimmer px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition inline-flex items-center gap-2 shrink-0"
+                  className="btn-shimmer px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition inline-flex items-center gap-2.5 shrink-0 group/btn"
                 >
+                  <i className="fa-solid fa-bullseye text-amber-300"></i>
                   <span>View All Results</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <i className="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
                 </Link>
               </div>
             </div>
@@ -845,50 +923,53 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Card 1: JEE Main */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border border-slate-200/90 p-6 text-center shadow-sm group">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student1.jpg"
                   alt="JEE Aspirants - Achievers Academy"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
+                <i className="fa-solid fa-atom text-blue-600"></i>
                 JEE Main &amp; Advanced
               </span>
-              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif">99+ Percentile Club</h4>
+              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif group-hover:text-blue-600 transition">99+ Percentile Club</h4>
               <p className="text-xs text-slate-500 mt-1">Qualified for Premier IITs &amp; NITs</p>
             </div>
 
             {/* Card 2: NEET */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border border-slate-200/90 p-6 text-center shadow-sm group">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student5.jpg"
                   alt="NEET Qualifiers - Achievers Academy"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-3 py-1 rounded-full">
+                <i className="fa-solid fa-stethoscope text-emerald-600"></i>
                 NEET Medical UG
               </span>
-              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif">Top MBBS Selections</h4>
+              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif group-hover:text-emerald-700 transition">Top MBBS Selections</h4>
               <p className="text-xs text-slate-500 mt-1">Government Medical College Seats</p>
             </div>
 
             {/* Card 3: MHT-CET */}
-            <div className="card-lift bg-white rounded-3xl overflow-hidden border border-slate-200 p-6 text-center shadow-sm">
+            <div className="card-interactive bg-white rounded-3xl overflow-hidden border border-slate-200/90 p-6 text-center shadow-sm group">
               <div className="h-64 sm:h-72 rounded-2xl overflow-hidden mb-4 bg-slate-50 border border-slate-100 p-2 flex items-center justify-center">
                 <img
                   src="/images/static_result_student7.jpg"
                   alt="CET Rankers - Achievers Academy"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
+                <i className="fa-solid fa-microscope text-blue-600"></i>
                 MHT-CET Champions
               </span>
-              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif">98.5+ Percentile</h4>
+              <h4 className="font-bold text-navy-950 mt-2.5 text-base font-serif group-hover:text-blue-600 transition">98.5+ Percentile</h4>
               <p className="text-xs text-slate-500 mt-1">Top Engineering &amp; Pharmacy colleges</p>
             </div>
 
@@ -901,14 +982,14 @@ export default function HomePage() {
       {/* =========================================================================
           8. TESTIMONIALS: "What our students say" with Student Portrait
          ========================================================================= */}
-      <section className="py-20 sm:py-24 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 sm:py-24 bg-slate-50 border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Side: Smiling Student in Grey Achievers Polo Shirt */}
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-64 sm:w-72 h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-50 flex items-center justify-center p-2">
+              <div className="relative w-64 sm:w-72 h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-50 flex items-center justify-center p-2 card-interactive">
                 <img
                   key={testimonials[currentTestimonial].id}
                   src={testimonials[currentTestimonial].photo}
@@ -930,7 +1011,8 @@ export default function HomePage() {
             <div className="lg:col-span-8 space-y-6">
               
               <div>
-                <span className="inline-block px-3 py-1 text-xs font-bold tracking-wider uppercase text-amber-800 bg-amber-100 rounded-full mb-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold tracking-wider uppercase text-amber-800 bg-amber-100 rounded-full mb-2">
+                  <i className="fa-solid fa-comment-dots text-amber-600 text-[11px]"></i>
                   Student Reviews
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold font-serif text-navy-950">
@@ -939,14 +1021,14 @@ export default function HomePage() {
               </div>
 
               {/* Quote Card */}
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm relative">
-                <div className="text-amber-500/30 absolute top-6 right-6">
-                  <Quote className="w-16 h-16" />
+              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 shadow-md relative card-interactive">
+                <div className="text-blue-100 absolute top-6 right-6 pointer-events-none text-5xl">
+                  <i className="fa-solid fa-quote-right"></i>
                 </div>
 
-                <div className="flex items-center gap-1 text-amber-500 mb-4">
+                <div className="flex items-center gap-1 text-amber-400 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
+                    <i key={i} className="fa-solid fa-star text-sm"></i>
                   ))}
                 </div>
 
@@ -974,17 +1056,17 @@ export default function HomePage() {
                     </span>
                     <button
                       onClick={prevTestimonial}
-                      className="p-2.5 rounded-full bg-slate-100 hover:bg-navy-950 hover:text-white transition text-slate-700 border border-slate-200"
+                      className="p-2.5 rounded-full bg-slate-100 hover:bg-navy-950 hover:text-white transition text-slate-700 border border-slate-200 flex items-center justify-center w-9 h-9"
                       aria-label="Previous Review"
                     >
-                      <ChevronLeft className="w-4 h-4" />
+                      <i className="fa-solid fa-chevron-left text-xs"></i>
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="p-2.5 rounded-full bg-slate-100 hover:bg-navy-950 hover:text-white transition text-slate-700 border border-slate-200"
+                      className="p-2.5 rounded-full bg-slate-100 hover:bg-navy-950 hover:text-white transition text-slate-700 border border-slate-200 flex items-center justify-center w-9 h-9"
                       aria-label="Next Review"
                     >
-                      <ChevronRight className="w-4 h-4" />
+                      <i className="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                   </div>
                 </div>
@@ -1001,12 +1083,14 @@ export default function HomePage() {
       {/* =========================================================================
           9. ADMISSION ENQUIRY CTA BANNER
          ========================================================================= */}
-      <section className="py-20 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
-              <span className="text-xs uppercase tracking-widest text-amber-400 font-bold">
+              <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-amber-400 font-bold">
+                <i className="fa-solid fa-bullhorn text-amber-400"></i>
                 Join Achievers Academy
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white leading-tight">
@@ -1020,7 +1104,7 @@ export default function HomePage() {
                   href="tel:8459360161"
                   className="inline-flex items-center gap-2 text-sm text-amber-400 font-semibold hover:underline"
                 >
-                  <PhoneCall className="w-4 h-4" />
+                  <i className="fa-solid fa-phone-volume text-amber-400"></i>
                   <span>Call Admission Desk: +91 8459360161</span>
                 </a>
               </div>
@@ -1029,18 +1113,20 @@ export default function HomePage() {
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
               <button
                 onClick={() => openAdmission('Achievers World School (Manmad)')}
-                className="w-full py-4 text-center text-sm font-bold text-navy-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg transition"
+                className="w-full py-4 text-center text-sm font-bold text-navy-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg transition-all duration-300 hover:shadow-amber-400/20 flex items-center justify-center gap-2"
               >
-                Apply Online Now
+                <i className="fa-solid fa-pen-nib text-navy-950"></i>
+                <span>Apply Online Now</span>
               </button>
 
               <a
                 href="https://wa.me/918459360161?text=Hello%20Achievers%20Academy,%20I%20want%20to%20know%20about%20admissions."
                 target="_blank"
                 rel="noreferrer"
-                className="w-full py-3.5 text-center text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow transition text-center"
+                className="w-full py-3.5 text-center text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Inquire on WhatsApp
+                <i className="fa-brands fa-whatsapp text-lg"></i>
+                <span>Inquire on WhatsApp</span>
               </a>
             </div>
 

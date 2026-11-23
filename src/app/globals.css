@@ -197,3 +197,85 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 .animate-toast-slide-down {
   animation: toastSlideDown 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Enhanced Atmospheric Float Animations */
+@keyframes floatBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatBobReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-1deg);
+  }
+}
+
+.animate-float-bob {
+  animation: floatBob 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatBobReverse 5.5s ease-in-out infinite;
+}
+
+/* Atmospheric Glow Pulse for Highlights */
+@keyframes glowAuraPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+
+.animate-glow-aura {
+  animation: glowAuraPulse 4s ease-in-out infinite;
+}
+
+/* Interactive Modern Card with Glass Depth */
+.card-interactive {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.card-interactive:hover {
+  transform: translateY(-7px) scale(1.01);
+  box-shadow: 0 24px 40px -12px rgba(15, 23, 42, 0.14), 0 0 25px rgba(37, 99, 235, 0.15);
+}
+
+/* Gradient Text Utilities */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #B45309 0%, #F59E0B 50%, #FCD34D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Modern Pattern Grid */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
